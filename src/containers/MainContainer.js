@@ -11,12 +11,15 @@ const MainContainer = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    const request = new RecipeService();
-    request.get('/api/recipes')
-    .then((data)=> {setRecipes({recipes:data})
-    })
+    getRecipes().then((allRecipes) => {setRecipes(allRecipes)});
+}, [])
+
+    // const request = new RecipeService();
+    // request.get('/api/recipes')
+    // .then((data)=> {setRecipes({recipes:data})
+    // })
     
-  })
+  
 
 
   
@@ -27,7 +30,7 @@ const MainContainer = () => {
         <HamburgerMenu />
                 <Routes>
                     <Route exact path="/" element={<Homepage/>}/>
-                    <Route exact path="/recipes-all" element={<RecipesAll/>}/>
+                    <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
                 </Routes>
         </Router>
     </main>

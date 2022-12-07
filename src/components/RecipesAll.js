@@ -1,9 +1,18 @@
 import React from 'react'
+import Recipe from './Recipe'
 import RecipeService from './RecipeService'
 
-const RecipesAll = () => {
+const RecipesAll = ({recipes}) => {
+
+    const recipeList = recipes.map((recipe) => {
+      return <Recipe recipe = {recipe} key={recipe._id}/>
+    })
+
+
   return (
-    <div>RecipesAll</div>
+    <div>
+        <div>{recipeList}</div>
+    </div>
   )
 }
 
