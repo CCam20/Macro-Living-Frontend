@@ -19,11 +19,8 @@ const MainContainer = () => {
     const recipeList = recipes.map((recipe)=>{
         return <RecipeList recipe={recipe} key={recipe._id}/>
     })
-  
 
-
-  
-  
+    
     return (
     <main>
         <Router>
