@@ -2,20 +2,11 @@ import React, { useState } from 'react'
 import { updateIngredients } from './IngredientsService'
 
 
-const IngredientButton = ({ingredient}) => {
+const IngredientButton = ({ingredient, handleIngredientSelected}) => {
 
-    // const [ingredient, setIngredient] = useState([])
-
-    const handleIngredientSelected = (() => {
-      if(ingredient.selected){
-            ingredient.selected = false
-      }else{
-        ingredient.selected = true
-      } 
-        updateIngredients(ingredient)
-        // setIngredient(ingredient)
-        console.log("click")
-    })
+  const handleClick = () => {
+    handleIngredientSelected(ingredient.id)
+  }
 
     const buttonSelectedText = ingredient.selected ? `Remove ${ingredient.name}` : `${ingredient.name}`
 
@@ -24,7 +15,7 @@ const IngredientButton = ({ingredient}) => {
   return (
     <div>
 
-    <button type="submit" onClick={handleIngredientSelected}>{buttonSelectedText}</button>
+    <button type="submit" onClick={handleClick}>{buttonSelectedText}</button>
 
     </div>
   )

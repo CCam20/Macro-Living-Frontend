@@ -24,15 +24,14 @@ const MainContainer = () => {
     getIngredients().then((allIngredients) => {setIngredients(allIngredients)});
 }, [], [], [])
 
-// const handleIngredientSelected = ((id) => {
-//     if(ingredients[{id}].selected){
-//           ingredients.id.selected = false
-//     }else{
-//       ingredients.id.selected = true
-//     } 
-//       updateIngredients(ingredient)
-//       console.log("click")
-//   })
+const handleIngredientSelected = ((id) => {
+  const updatedIngredients = ingredients.map((ingredient) => {
+    return ingredient.id == id
+      ?{...ingredient, selected: !ingredient.selected} : ingredient
+  })
+  setIngredients(updatedIngredients);
+})
+
 
   
 
@@ -42,7 +41,7 @@ const MainContainer = () => {
         <Router>
         <HamburgerMenu />
                 <Routes>
-                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes}/>}/>
+                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
                     <Route exact path="/recipe/:id" element={<Recipe recipes={recipes}/>}/>
 
