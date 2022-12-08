@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import HamburgerMenu from '../components/HamburgerMenu'
 import Homepage from '../components/Homepage'
 import RecipeService, { getRecipes } from '../components/RecipeService'
+import Recipe from '../components/Recipe'
+import RecipeList from '../components/RecipeList'
 
 const MainContainer = () => {
   
@@ -14,11 +16,9 @@ const MainContainer = () => {
     getRecipes().then((allRecipes) => {setRecipes(allRecipes)});
 }, [])
 
-    // const request = new RecipeService();
-    // request.get('/api/recipes')
-    // .then((data)=> {setRecipes({recipes:data})
-    // })
-    
+    const recipeList = recipes.map((recipe)=>{
+        return <RecipeList recipe={recipe} key={recipe._id}/>
+    })
   
 
 
@@ -31,6 +31,8 @@ const MainContainer = () => {
                 <Routes>
                     <Route exact path="/" element={<Homepage/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
+                    <Route exact path="/recipe/:id" element={<Recipe recipes={recipes}/>}/>
+
                 </Routes>
         </Router>
     </main>
