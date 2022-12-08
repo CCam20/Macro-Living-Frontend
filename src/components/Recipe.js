@@ -6,33 +6,30 @@ import Step from './Step'
 
 const Recipe = ({recipes}) => {
 
-    console.log(recipes)
     const {id} = useParams()
     const recipe = recipes.filter(recipe => recipe.id == id)
-    console.log(id)
-    console.log(recipe)
-    // const ingredientList = recipe.ingredients.map((ingredient) => {
-    //     return <Ingredient ingredient = {ingredient} key={ingredient._id}/>
-    //   })
+    const ingredientList = recipe[0].ingredients.map((ingredient) => {
+        return <Ingredient ingredient = {ingredient} key={ingredient._id}/>
+      })
 
   return (
     <div>
         <div>
           {recipe[0].name}<br></br>
+        
           Ingredients:<br></br>
-          
-          {/* {ingredientList}
+          {ingredientList}
           Steps:<br></br>
-          {recipe.steps.step1}<br></br>
-          {recipe.steps.step2}<br></br>
-          {recipe.steps.step3}<br></br>
-          {recipe.steps.step4}<br></br>
-          {recipe.steps.step5}<br></br>
-          {recipe.steps.step6}<br></br>
-          {recipe.steps.step7}<br></br>
-          {recipe.steps.step8}<br></br>
-          {recipe.steps.step9}<br></br>
-          {recipe.steps.step10}<br></br> */}
+          {recipe[0].steps.step1}<br></br>
+          {recipe[0].steps.step2}<br></br>
+          {recipe[0].steps.step3}<br></br>
+          {recipe[0].steps.step4}<br></br>
+          {recipe[0].steps.step5}<br></br>
+          {recipe[0].steps.step6}<br></br>
+          {recipe[0].steps.step7}<br></br>
+          {recipe[0].steps.step8}<br></br>
+          {recipe[0].steps.step9}<br></br>
+          {recipe[0].steps.step10}<br></br>
         
 
 

@@ -7,18 +7,34 @@ import Homepage from '../components/Homepage'
 import RecipeService, { getRecipes } from '../components/RecipeService'
 import Recipe from '../components/Recipe'
 import RecipeList from '../components/RecipeList'
+import { getUsers } from '../components/UserService'
+import { getIngredients } from '../components/IngredientsService'
 
 const MainContainer = () => {
   
   const [recipes, setRecipes] = useState([]);
 
+  const [users, setUsers] = useState([]);
+
+  const [ingredients, setIngredients] = useState([]);
+
   useEffect(() => {
     getRecipes().then((allRecipes) => {setRecipes(allRecipes)});
-}, [])
+    getUsers().then((allUsers) => {setUsers(allUsers)});
+    getIngredients().then((allIngredients) => {setIngredients(allIngredients)});
+}, [], [], [])
 
-    const recipeList = recipes.map((recipe)=>{
-        return <RecipeList recipe={recipe} key={recipe._id}/>
-    })
+// const handleIngredientSelected = ((id) => {
+//     if(ingredients[{id}].selected){
+//           ingredients.id.selected = false
+//     }else{
+//       ingredients.id.selected = true
+//     } 
+//       updateIngredients(ingredient)
+//       console.log("click")
+//   })
+
+  
 
     
     return (
@@ -26,7 +42,7 @@ const MainContainer = () => {
         <Router>
         <HamburgerMenu />
                 <Routes>
-                    <Route exact path="/" element={<Homepage/>}/>
+                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
                     <Route exact path="/recipe/:id" element={<Recipe recipes={recipes}/>}/>
 
