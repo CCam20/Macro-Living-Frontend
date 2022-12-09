@@ -32,9 +32,17 @@ const handleIngredientSelected = ((id) => {
   })
   setIngredients(updatedIngredients);
 
-
-
 })
+
+const handleRecipeFavourite = ((id) => {
+  const updatedRecipes = recipes.map((recipe) => {
+    return recipe.id == id
+    ?{...recipe, favourite: !recipe.favourite} : recipe
+  })
+  setRecipes(updatedRecipes)
+})
+
+
 const updateUser = ((formData) => {
     const updatedUser = users
     updatedUser[0].protein = formData.protein
@@ -47,9 +55,6 @@ const updateUser = ((formData) => {
 
 
 
-
-  
-
     
     return (
     <main>
@@ -58,7 +63,7 @@ const updateUser = ((formData) => {
                 <Routes>
                     <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
-                    <Route exact path="/recipe/:id" element={<Recipe recipes={recipes}/>}/>
+                    <Route exact path="/recipe/:id" element={<Recipe recipes={recipes} handleRecipeFavourite={handleRecipeFavourite}/>}/>
 
                 </Routes>
         </Router>

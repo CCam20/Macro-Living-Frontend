@@ -4,7 +4,7 @@ import Ingredient from './Ingredient'
 import RecipesAll from './RecipesAll'
 import Step from './Step'
 
-const Recipe = ({recipes}) => {
+const Recipe = ({recipes, handleRecipeFavourite}) => {
 
     const {id} = useParams()
     const recipe = recipes.filter(recipe => recipe.id == id)
@@ -12,10 +12,17 @@ const Recipe = ({recipes}) => {
         return <Ingredient ingredient = {ingredient} key={ingredient._id}/>
       })
 
+      const handleClick = (() => {
+        handleRecipeFavourite(recipe.id)
+      })
+
+      const favouriteSelectedText = recipe.favourite ? "Hearted" : "Not Hearted"
+
   return (
     <div>
         <div>
           {recipe[0].name}<br></br>
+          <button type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
         
           Ingredients:<br></br>
           {ingredientList}
@@ -31,6 +38,7 @@ const Recipe = ({recipes}) => {
           {recipe[0].steps.step9}<br></br>
           {recipe[0].steps.step10}<br></br>
         
+
 
 
 
