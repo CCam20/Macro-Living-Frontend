@@ -14,7 +14,7 @@ export const updateUser = (payload) => {
 
     return fetch(baseURL + id, {
         // mode: "no-cors",
-        method: 'PATCH',
+        method: 'PUT',
         body: JSON.stringify(payload),
         headers:{'Content-Type': 'application/json'}
 

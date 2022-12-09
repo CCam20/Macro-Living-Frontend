@@ -9,13 +9,13 @@ export const getRecipes = () => {
 
 export const updateRecipe = (payload) => {
     console.log(payload)
-    const id = payload[0].id;
+    const id = payload.id;
+    console.log(id)
 
     return fetch(baseURL + id, {
-        // mode: 'no-cors',
-        method: 'POST',
-        body: JSON.stringify(payload),
-        headers:{'Content-Type': 'application/json'}
+        method: "PATCH",
+        headers:{'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
 
     })
 }
