@@ -8,7 +8,8 @@ import RecipeService, { getRecipes } from '../components/RecipeService'
 import Recipe from '../components/Recipe'
 import RecipeList from '../components/RecipeList'
 import { getUsers } from '../components/UserService'
-import { getIngredients } from '../components/IngredientsService'
+import { getIngredients} from '../components/IngredientsService'
+
 
 const MainContainer = () => {
   
@@ -30,10 +31,15 @@ const handleIngredientSelected = ((id) => {
       ?{...ingredient, selected: !ingredient.selected} : ingredient
   })
   setIngredients(updatedIngredients);
+
+
 })
-const handleUserUpdate = ((payload) => {
-    const
-  
+const updateUser = ((formData) => {
+  setUsers(formData)
+  const updatedUsers = users.map((user)=>{
+    return user.id == 1
+    ?{...user, formData}: user
+  })
 })
 
 
@@ -45,7 +51,7 @@ const handleUserUpdate = ((payload) => {
         <Router>
         <HamburgerMenu />
                 <Routes>
-                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} handleUserUpdate = {handleUserUpdate}/>}/>
+                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
                     <Route exact path="/recipe/:id" element={<Recipe recipes={recipes}/>}/>
 
