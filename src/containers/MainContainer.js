@@ -4,7 +4,7 @@ import RecipesAll from '../components/RecipesAll'
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import HamburgerMenu from '../components/HamburgerMenu'
 import Homepage from '../components/Homepage'
-import RecipeService, { getRecipes } from '../components/RecipeService'
+import RecipeService, { getRecipes, updateRecipe } from '../components/RecipeService'
 import Recipe from '../components/Recipe'
 import RecipeList from '../components/RecipeList'
 import { getUsers } from '../components/UserService'
@@ -39,6 +39,9 @@ const handleRecipeFavourite = ((id) => {
     return recipe.id == id
     ?{...recipe, favourite: !recipe.favourite} : recipe
   })
+  console.log(updatedRecipes)
+  const filteredRecipe = updatedRecipes.filter((recipe)=>{return recipe.id==id})
+  updateRecipe(filteredRecipe)
   setRecipes(updatedRecipes)
 })
 
