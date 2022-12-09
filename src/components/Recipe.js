@@ -13,10 +13,10 @@ const Recipe = ({recipes, handleRecipeFavourite}) => {
       })
 
       const handleClick = (() => {
-        handleRecipeFavourite(recipe.id)
+        handleRecipeFavourite(recipe[0].id)
       })
 
-      const favouriteSelectedText = recipe.favourite ? "Hearted" : "Not Hearted"
+      const favouriteSelectedText = recipe[0].favourite ? "Hearted" : "Not Hearted"
 
   return (
     <div>
