@@ -31,7 +31,7 @@ const handleIngredientSelected = ((id) => {
       ?{...ingredient, selected: !ingredient.selected} : ingredient
   })
   setIngredients(updatedIngredients);
-  console.log(users)
+
 
 
 })

@@ -14,15 +14,9 @@ const User = ({updateUser}) => {
     
     const handleUserSubmit = ((e) => {
       e.preventDefault()
-      console.log(formData)
+
       updateUser(formData)
     })
-
-    // const addBooking = ((booking) => {
-    //   let temp = guests.map(g => g)
-    //   temp.push(booking)
-    //   setGuests(temp)
-    // })
 
   return (
     <div>
