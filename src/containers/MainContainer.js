@@ -31,6 +31,10 @@ const handleIngredientSelected = ((id) => {
   })
   setIngredients(updatedIngredients);
 })
+const handleUserUpdate = ((payload) => {
+    const
+  
+})
 
 
   
@@ -41,7 +45,7 @@ const handleIngredientSelected = ((id) => {
         <Router>
         <HamburgerMenu />
                 <Routes>
-                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected}/>}/>
+                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} handleUserUpdate = {handleUserUpdate}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
                     <Route exact path="/recipe/:id" element={<Recipe recipes={recipes}/>}/>
 

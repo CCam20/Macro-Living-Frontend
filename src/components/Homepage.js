@@ -5,10 +5,10 @@ import RecipeResult from './RecipeResult'
 import Ingredient from './Ingredient'
 import IngredientButton from './IngredientButton'
 
-const Homepage = ({users, recipes, ingredients, handleIngredientSelected}) => {
+const Homepage = ({users, recipes, ingredients, handleIngredientSelected, handleUserUpdate}) => {
 
   const user = users.map((user) => {
-    return <User user = {user} key={user.id}/>
+    return <User user = {user} key={user.id} handleUserUpdate = {handleUserUpdate}/>
   })
 
   const ingredientsButtons = ingredients.map((ingredient) => {

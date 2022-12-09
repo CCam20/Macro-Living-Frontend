@@ -1,11 +1,28 @@
 import React from 'react'
+import { updateUser } from './UserService'
 
-const User = () => {
+const User = ({handleUserUpdate}) => {
+
+  const [formData, setFormData] = useState({
+    protein: '',
+    carbs: '',
+    fat: '',
+    fibre: '',
+    calories: ''
+    })
+
+ const updateUserMacros = ((event) => {
+  event.preventDefault()
+  handleUserUpdate()
+  
+ })
+
+
 
 
   return (
     <div>
-      <form>
+      <form onSubmit = {updateUserMacros}>
       <label htmlFor="protein">Protein:</label>
       <input type="number" id="protein" name="protein" min="0" placeholder='Grams of Protein' required autoFocus/>
     
