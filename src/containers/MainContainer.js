@@ -23,7 +23,7 @@ const MainContainer = () => {
     getRecipes().then((allRecipes) => {setRecipes(allRecipes)});
     getUsers().then((allUsers) => {setUsers(allUsers)});
     getIngredients().then((allIngredients) => {setIngredients(allIngredients)});
-}, [], [], [])
+},[],[],[])
 
 const handleIngredientSelected = ((id) => {
   const updatedIngredients = ingredients.map((ingredient) => {
@@ -31,16 +31,21 @@ const handleIngredientSelected = ((id) => {
       ?{...ingredient, selected: !ingredient.selected} : ingredient
   })
   setIngredients(updatedIngredients);
+  console.log(users)
 
 
 })
 const updateUser = ((formData) => {
-  setUsers(formData)
-  const updatedUsers = users.map((user)=>{
-    return user.id == 1
-    ?{...user, formData}: user
+    const updatedUser = users
+    updatedUser[0].protein = formData.protein
+    updatedUser[0].carbs = formData.carbs
+    updatedUser[0].fat = formData.fat
+    updatedUser[0].fibre = formData.fibre
+    updatedUser[0].calories = formData.calories
+    setUsers(updatedUser)
   })
-})
+
+
 
 
   

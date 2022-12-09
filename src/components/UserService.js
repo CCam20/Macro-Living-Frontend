@@ -19,3 +19,17 @@ export const updateUser = (payload) => {
 
     })
 }
+
+// export const putBooking = (payload) => {
+//     const id = payload[0]._id;
+//     const newPayload = {};
+//     newPayload['isCheckedIn'] = payload[0].IsCheckedIn;
+//     newPayload['email'] = payload[0].email;
+//     newPayload['name'] = payload[0].name;
+
+//     return fetch(baseURL + id, {
+//         method: 'PUT',
+//         body: JSON.stringify(newPayload),
+//         headers: { 'Content-Type': 'application/json' }
+//     })
+// }
