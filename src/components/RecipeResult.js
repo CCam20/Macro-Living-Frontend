@@ -12,7 +12,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
       })
 
       const favouriteSelectedText = recipe.favourite ? "Hearted" : "Not Hearted"
-      const mealPlanSelectedText = recipe.mealPlan ? "In Meal Plan" : "Add To Meal Plan"
+      const mealPlanSelectedText = recipe.mealPlan ? "Remove from Meal Plan" : "Add To Meal Plan"
 
     const totalProtein = () => {
         let total = 0

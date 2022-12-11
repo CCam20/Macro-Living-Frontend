@@ -41,8 +41,6 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     <hr></hr>
     <h3>Based on your selections you have the ingredients to make the following recipes:</h3>
     <div>{foundRecipes}</div>
-
-    <div><MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} /></div>
     </>
   )
 }

@@ -20,7 +20,7 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
       })
 
       const favouriteSelectedText = recipe[0].favourite ? "Hearted" : "Not Hearted"
-      const mealPlanSelectedText = recipe.mealPlan ? "In Meal Plan" : "Add To Meal Plan"
+      const mealPlanSelectedText = recipe.mealPlan ? "Remove From Meal Plan" : "Add To Meal Plan"
 
 
   return (

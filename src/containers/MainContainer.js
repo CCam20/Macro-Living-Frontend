@@ -9,6 +9,7 @@ import Recipe from '../components/Recipe'
 import RecipeList from '../components/RecipeList'
 import { getUsers } from '../components/UserService'
 import { getIngredients} from '../components/IngredientsService'
+import MealPlan from '../components/MealPlan'
 
 
 
@@ -93,7 +94,10 @@ const updateUser = ((formData) => {
     return (
     <main>
         <Router>
+        <div className="sidebars">
         <HamburgerMenu />
+        <MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} />
+        </div>
                 <Routes>
                     <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>

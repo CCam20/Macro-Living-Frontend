@@ -21,13 +21,10 @@ const HamburgerMenu = () => {
       }
   return (
     <>
-    <div id="mySidenav" className="sidenav">
-  <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-  <Link to="/">Home</Link>
-  <Link to="/recipes-all">All Recipes</Link>
-
-
-  
+    <div id="mySidenav" className="leftsidenav">
+     <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+    <Link to="/">Home</Link>
+    <Link to="/recipes-all">All Recipes</Link>
     </div>
     <button onClick={openNav}>open</button>
 
