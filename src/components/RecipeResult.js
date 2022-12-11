@@ -1,11 +1,8 @@
 import React from 'react'
 import Ingredient from './Ingredient'
 
-const RecipeResult = ({recipe, recipes, handleRecipeFavourite,handleAddToMealPlan}) => {
+const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
 
-    const ingredientsList = recipe.ingredients.map((ingredient) => {
-        return <Ingredient ingredient = {ingredient} key={ingredient.id}/>
-      })
    
       const handleClick = (() => {
         handleRecipeFavourite(recipe.id)
@@ -17,16 +14,64 @@ const RecipeResult = ({recipe, recipes, handleRecipeFavourite,handleAddToMealPla
       const favouriteSelectedText = recipe.favourite ? "Hearted" : "Not Hearted"
       const mealPlanSelectedText = recipe.mealPlan ? "In Meal Plan" : "Add To Meal Plan"
 
+    const totalProtein = () => {
+        let total = 0
+        for (let i = 0; i < recipe.ingredients.length; i++){
+             total += recipe.ingredients[i].protein
+        } return Math.round(total)
+    }
     
+    const totalCarbs = () => {
+        let total = 0
+        for (let i = 0; i < recipe.ingredients.length; i++){
+             total += recipe.ingredients[i].carbs
+        } return Math.round(total)
+    }
+
+    const totalFat = () => {
+        let total = 0
+        for (let i = 0; i < recipe.ingredients.length; i++){
+             total += recipe.ingredients[i].fat
+        } return Math.round(total)
+    }
+
+    const totalFibre = () => {
+        let total = 0
+        for (let i = 0; i < recipe.ingredients.length; i++){
+             total += recipe.ingredients[i].fibre
+        } return Math.round(total)
+    }
+
+    const totalCalories = () => {
+        let total = 0
+        for (let i = 0; i < recipe.ingredients.length; i++){
+             total += recipe.ingredients[i].calories
+        } return Math.round(total)
+    }
 
     return (
         <>
         <br></br>
-        <div>{recipe.name}</div>
-        <button type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
+        <div><h4>{recipe.name}</h4></div>
+        <ul>
+            <li>
+                Protein:{totalProtein()}
+            </li>
+            <li>
+                Carbs:{totalCarbs()}
+            </li>
+            <li>
+                Fat:{totalFat()}
+            </li>
+            <li>
+                Fibre:{totalFibre()}
+            </li>
+            <li>
+                Total Calories:{totalCalories()}
+            </li>
+        </ul>
         <button type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
-
-        <div>{ingredientsList}</div>
+        <button type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
 
         <br></br>
         </>
