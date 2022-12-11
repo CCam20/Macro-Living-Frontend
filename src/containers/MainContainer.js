@@ -45,15 +45,23 @@ const handleRecipeFavourite = ((id) => {
   updateRecipe(filteredRecipe)
   setRecipes(updatedRecipes)
 })
+
 const handleAddToMealPlan = ((id) => {
-    const updatedRecipes = recipes.map((recipe) => {
-      return recipe.id == id
-      ?{...recipe, mealPlan: !recipe.mealPlan} : recipe
-    })
-    console.log(updatedRecipes)
-    const filteredRecipe = updatedRecipes.find((recipe)=>{return recipe.id==id})
-    updateRecipe(filteredRecipe)
-    setRecipes(updatedRecipes)
+    
+    const recipesInMealPlan = recipes.filter((recipe) => recipe.mealPlan == true)
+
+    if (recipesInMealPlan.length < 3){
+        const updatedRecipes = recipes.map((recipe) => {
+            return recipe.id == id
+
+        ?{...recipe, mealPlan: !recipe.mealPlan} : recipe})
+
+        const filteredRecipe = updatedRecipes.find((recipe)=>{return recipe.id==id})
+            updateRecipe(filteredRecipe)
+            setRecipes(updatedRecipes)
+    }else{
+            alert("Maximum 3 meals allowed in meal plan. Please remove recipes to add a new one")
+    }
   })
 
 
