@@ -26,6 +26,8 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
 
   // const sortedIngredientsList = ingredientsButtons.sort((a, b) => a.name.localeCompare(b.name))
 
+  /* Set the width of the side navigation to 250px */
+
 
   return (
     <>
