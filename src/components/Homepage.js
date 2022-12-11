@@ -4,6 +4,7 @@ import User from './User'
 import RecipeResult from './RecipeResult'
 import Ingredient from './Ingredient'
 import IngredientButton from './IngredientButton'
+import MealPlan from './MealPlan'
 
 const Homepage = ({users, recipes, ingredients, handleIngredientSelected, updateUser, handleRecipeFavourite, handleAddToMealPlan}) => {
 
@@ -27,6 +28,8 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     <div>{user}</div>
     <div>{ingredientsButtons}</div>
     <div>{foundRecipes}</div>
+
+    <div><MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} /></div>
     </>
   )
 }
