@@ -16,10 +16,15 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     return <IngredientButton ingredient = {ingredient} key={ingredient.id} handleIngredientSelected={handleIngredientSelected}/>
   })
 
-  const foundRecipes = recipes.map((recipe) => {
-    return <RecipeResult recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
+  const selectedIngredients = ingredients.filter((ingredient) => ingredient.selected === true)
+
+  const filteredRecipes = recipes.filter((recipe)=> recipe.ingredients.length <= selectedIngredients.length )
+
+  const foundRecipes = filteredRecipes.map((recipe) => {
+    return <RecipeResult  recipes={recipes} recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
   })
 
+  // const sortedIngredientsList = ingredientsButtons.sort((a, b) => a.name.localeCompare(b.name))
 
 
   return (
@@ -35,3 +40,14 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
 }
 
 export default Homepage
+
+
+
+{/* <div>{ingredientsButtons.sort(function(a, b){
+  var nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+  if (nameA < nameB) //sort string ascending
+   return -1;
+  if (nameA > nameB)
+   return 1;
+  return 0; //default return value (no sorting)
+ })};</div> */}

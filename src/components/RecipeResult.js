@@ -1,7 +1,7 @@
 import React from 'react'
 import Ingredient from './Ingredient'
 
-const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
+const RecipeResult = ({recipe, recipes, handleRecipeFavourite,handleAddToMealPlan}) => {
 
     const ingredientsList = recipe.ingredients.map((ingredient) => {
         return <Ingredient ingredient = {ingredient} key={ingredient.id}/>
@@ -17,6 +17,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
       const favouriteSelectedText = recipe.favourite ? "Hearted" : "Not Hearted"
       const mealPlanSelectedText = recipe.mealPlan ? "In Meal Plan" : "Add To Meal Plan"
 
+    
 
     return (
         <>

@@ -60,9 +60,19 @@ const handleAddToMealPlan = ((id) => {
             updateRecipe(filteredRecipe)
             setRecipes(updatedRecipes)
     }else{
+        const updatedRecipes = recipes.map((recipe) => {
+            return recipe.id == id
+        
+        ?{...recipe, mealPlan: false} : recipe})
+        
+        const filteredRecipe = updatedRecipes.find((recipe)=>{return recipe.id==id})
+            updateRecipe(filteredRecipe)
+            setRecipes(updatedRecipes)
             alert("Maximum 3 meals allowed in meal plan. Please remove recipes to add a new one")
-    }
+        }
   })
+
+
 
 
 
