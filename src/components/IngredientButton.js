@@ -4,20 +4,19 @@ import { updateIngredients } from './IngredientsService'
 
 const IngredientButton = ({ingredient, handleIngredientSelected}) => {
 
+    const [isActive, setIsActive] = useState(false);
+
   const handleClick = () => {
     handleIngredientSelected(ingredient.id)
+    setIsActive(current => ! current)
   }
 
-    const buttonSelectedText = ingredient.selected ? `Remove ${ingredient.name}` : `${ingredient.name}`
-
-
-
   return (
-    <div>
+    <span>
 
-    <button type="submit" onClick={handleClick}>{buttonSelectedText}</button>
+    <button className={isActive ? "ingredient-button-selected" : "ingredient-button"} type="submit" onClick={handleClick}>{ingredient.name}</button>
 
-    </div>
+    </span>
   )
 }
 
