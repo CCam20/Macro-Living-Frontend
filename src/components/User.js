@@ -14,7 +14,6 @@ const User = ({updateUser}) => {
     
     const handleUserSubmit = ((e) => {
       e.preventDefault()
-
       updateUser(formData)
     })
 

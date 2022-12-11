@@ -45,6 +45,18 @@ const handleRecipeFavourite = ((id) => {
   updateRecipe(filteredRecipe)
   setRecipes(updatedRecipes)
 })
+const handleAddToMealPlan = ((id) => {
+    const updatedRecipes = recipes.map((recipe) => {
+      return recipe.id == id
+      ?{...recipe, mealPlan: !recipe.mealPlan} : recipe
+    })
+    console.log(updatedRecipes)
+    const filteredRecipe = updatedRecipes.find((recipe)=>{return recipe.id==id})
+    updateRecipe(filteredRecipe)
+    setRecipes(updatedRecipes)
+  })
+
+
 
 
 const updateUser = ((formData) => {
@@ -65,9 +77,9 @@ const updateUser = ((formData) => {
         <Router>
         <HamburgerMenu />
                 <Routes>
-                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite}/>}/>
+                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
-                    <Route exact path="/recipe/:id" element={<Recipe recipes={recipes} handleRecipeFavourite={handleRecipeFavourite}/>}/>
+                    <Route exact path="/recipe/:id" element={<Recipe recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
 
                 </Routes>
         </Router>
