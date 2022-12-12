@@ -29,12 +29,17 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
   return (
     <div>
         <div className=''>
-          {recipe[0].name}<br></br>
-          <button className='add-to-meal-btn' type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button><br></br>
-          <button className='fav-btn' type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
+          
+          {recipe[0].name}
+          <button className='fav-btn' type="submit" onClick={handleClick}>{favouriteSelectedText}</button><br></br>
         
-          Ingredients:<br></br>
+          Ingredients:
+          <br></br>
           {ingredientList}
+          <br></br>
+          <button className='add-to-meal-btn' type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
+          <br></br>
+          <br></br>
           Steps:<br></br>
           {recipe[0].steps.step1}<br></br>
           {recipe[0].steps.step2}<br></br>
