@@ -74,12 +74,13 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
         } return Math.round(totalCalories)
       }
       
+      const mealPlanLogo = require("../images/LogoBowl.png")
 
 
 
   return (
     <>
-    <div onClick={closeNav} id="meal-plan" className="rightsidenav">
+    <div id="meal-plan" className="rightsidenav">
     <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
     <h1>Meal Plan</h1>
     {renderMealPlanRecipes}
@@ -104,7 +105,7 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
     </ul>
     </div>
     </div>
-    <button className='meal-plan-btn' onClick={openNav}>Open Meal Plan</button>
+    <button className='meal-plan-btn' onClick={openNav}><img src={mealPlanLogo} width='50px' alt="Meal Plan"/></button>
     
     </>
   )

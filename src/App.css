@@ -138,7 +138,7 @@ a:link {
 .sidebars{
   display: flex;
   justify-content: space-between;
-  margin-right: 25px;
+  /* margin-right: 25px; */
 }
 
 div.scroll { 
@@ -152,7 +152,7 @@ div.scroll {
   text-align:justify; 
 }
 .meal-plan-btn {
-	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	/* box-shadow:inset 0px 1px 0px 0px #a4e271;
 	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
 	background-color:#89c403;
 	border-radius:6px;
@@ -163,9 +163,11 @@ div.scroll {
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:6px 24px; */
 	text-decoration:none;
-	text-shadow:0px 1px 0px #528009;
+	border-style: none;
+	background-color: transparent;
+	/* text-shadow:0px 1px 0px #528009; */
 }
 .meal-plan-btn:hover {
 	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
@@ -203,13 +205,13 @@ div.scroll {
 
 .hamburger-menu-btn {
 	background-color:transparent;
-	display:inline-block;
+	/* display:inline-block;
 	cursor:pointer;
 	color:#666666;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:0px 0px;
+	padding:0px 0px; */
 	text-decoration:none;
   	border-style: none;
 }

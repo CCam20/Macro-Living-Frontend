@@ -15,7 +15,10 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
         handleAddToMealPlan(recipe.id)
       })
 
-      const favouriteSelectedText = recipe.favourite ? "Hearted" : "Not Hearted"
+      const hearted = require("../images/Hearted.png")
+      const unhearted= require("../images/Unhearted.png")
+
+      const favouriteSelectedText = recipe.favourite ? <img width='20px' src={hearted}/>  : <img width='20px' src={unhearted}/>
       const mealPlanSelectedText = recipe.mealPlan ? "Remove from Meal Plan" : "Add To Meal Plan"
 
     const totalProtein = () => {
@@ -83,8 +86,8 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
     <span className="closed" id={recipe.name}>
     <header onClick={handleToggle} id="toggle">
         <div className="header" style={{backgroundImage: "url(https://www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg)"}}></div>
-        <div className="title">{recipe.name}</div>
     </header>
+        <div className="title">{recipe.name}<button className='fav-btn' type="submit" onClick={handleClick}>{favouriteSelectedText}</button></div> 
     <article>
     <ul className="ingredients">
         {ingredientsList}

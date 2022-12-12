@@ -8,8 +8,11 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
       const handleMealPlanClick =(() => {
         handleAddToMealPlan(recipe.id)
       })
+      
+      const hearted = require("../images/Hearted.png")
+      const unhearted= require("../images/Unhearted.png")
 
-      const favouriteSelectedText = recipe.favourite ? "Hearted" : "Not Hearted"
+      const favouriteSelectedText = recipe.favourite ? <img width='20px' src={hearted}/>  : <img width='20px' src={unhearted}/>
       const mealPlanSelectedText = recipe.mealPlan ? "Remove from Meal Plan" : "Add To Meal Plan"
 
     const totalProtein = () => {
@@ -47,6 +50,8 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
         } return Math.round(total)
     }
 
+    
+
   return (
     <>
         <br></br>
@@ -68,6 +73,7 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
             Total Calories:{totalCalories()}
         </li>
     </ul>
+    
     <button className="add-to-meal-btn"type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
     <button className="fav-btn"type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
 
