@@ -7,12 +7,9 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
       return recipe.mealPlan == true
     })
     
-
-
     const renderMealPlanRecipes = mealPlanRecipes.map((recipe) => {
       return <MealPlanRecipe recipe={recipe} key={recipe.if} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
     })
-
     function openNav() {
         document.getElementById("meal-plan").style.width = "350px";
         // document.body.style.backgroundColor = "rgba(100,90,90,0.99)";
@@ -20,12 +17,10 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
     
       function closeNav() {
         document.getElementById("meal-plan").style.width = "0";
-
       }
-      
-      
-      const calculateTotalProtein = () => {
 
+      const calculateTotalProtein = () => {
+        
         let totalProtein = 0
         for (let i = 0; i < mealPlanRecipes.length; i++){
           for(let k=0; k < mealPlanRecipes[i].ingredients.length; k++){

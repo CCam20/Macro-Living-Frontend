@@ -10,7 +10,6 @@ const HamburgerMenu = () => {
   
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-
   }
   
   const hamburgerMenuIcon = require("../images/HamburgerIcon.png")

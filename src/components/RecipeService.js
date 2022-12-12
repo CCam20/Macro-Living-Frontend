@@ -8,10 +8,8 @@ export const getRecipes = () => {
 }
 
 export const updateRecipe = (payload) => {
-
     const id = payload.id;
-
-
+    
     return fetch(baseURL + id, {
         method: "PATCH",
         body: JSON.stringify(payload),

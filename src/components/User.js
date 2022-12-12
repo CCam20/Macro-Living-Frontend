@@ -1,5 +1,4 @@
 import React from 'react'
-import { updateUser } from './UserService'
 import { useState } from 'react'
 
 const User = ({updateUser}) => {

@@ -1,6 +1,3 @@
-
-
-
 const baseURL = 'http://localhost:8080/api/users/'
 
 export const getUsers = () => {
@@ -9,7 +6,6 @@ export const getUsers = () => {
 }
 
 export const addUser = (payload) => {
-
     const id = payload.id;
 
     return fetch(baseURL + id, {

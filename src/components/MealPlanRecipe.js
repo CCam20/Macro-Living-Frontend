@@ -8,7 +8,7 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
       const handleMealPlanClick =(() => {
         handleAddToMealPlan(recipe.id)
       })
-      
+
       const hearted = require("../images/Hearted.png")
       const unhearted= require("../images/Unhearted.png")
 
@@ -49,8 +49,6 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
              total += recipe.ingredients[i].calories
         } return Math.round(total)
     }
-
-    
 
   return (
     <>

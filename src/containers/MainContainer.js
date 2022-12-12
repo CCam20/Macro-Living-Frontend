@@ -73,11 +73,6 @@ const handleAddToMealPlan = ((id) => {
       }
   )
 
-
-
-
-
-
 const updateUser = ((formData) => {
     const updatedUser = users
     updatedUser[0].protein = formData.protein

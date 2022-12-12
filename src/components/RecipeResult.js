@@ -1,5 +1,4 @@
 import React, {useRef, useState} from 'react'
-import Ingredient from './Ingredient'
 import './RecipeResult.css'
 import IngredientForCard from './IngredientForCard'
 
@@ -75,9 +74,6 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
       return <IngredientForCard ingredient={ingredient} key={ingredient.id}/>
     })
     const bottomRef = useRef(null);
-    
-    
-    
     
     return (
         <>

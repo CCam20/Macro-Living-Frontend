@@ -1,8 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import Ingredient from './Ingredient'
-import RecipesAll from './RecipesAll'
-import Step from './Step'
+
 
 const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
 
@@ -24,7 +23,6 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
 
       const favouriteSelectedText = recipe[0].favourite ? <img width='20px' src={hearted}/>  : <img width='20px' src={unhearted}/>
       const mealPlanSelectedText = recipe[0].mealPlan ? "Remove From Meal Plan" : "Add To Meal Plan"
-
 
   return (
     <div>
