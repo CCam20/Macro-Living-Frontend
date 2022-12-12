@@ -6,7 +6,10 @@ import RecipeList from './RecipeList'
 
 const RecipesAll = ({recipes}) => {
 
-    const recipeList = recipes.map((recipe) => {
+  const sortedRecipes = recipes.sort((a, b) => a.name.localeCompare(b.name))
+
+
+    const recipeList = sortedRecipes.map((recipe) => {
       return <RecipeList recipe = {recipe} key={recipe.id}/>
     })
 

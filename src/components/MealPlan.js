@@ -13,7 +13,7 @@ const MealPlan = ({recipes, handleRecipeFavourite, handleAddToMealPlan }) => {
     })
 
     function openNav() {
-        document.getElementById("meal-plan").style.width = "250px";
+        document.getElementById("meal-plan").style.width = "350px";
         // document.getElementById("main").style.marginLeft = "250px";
         // document.body.style.backgroundColor = "rgba(100,90,90,0.99)";
       }

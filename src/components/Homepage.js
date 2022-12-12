@@ -11,14 +11,17 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
   const user = users.map((user) => {
     return <User user = {user} key={user.id} updateUser = {updateUser}/>
   })
+  const sortedIngredients = ingredients.sort((a, b) => a.name.localeCompare(b.name))
 
-  const ingredientsButtons = ingredients.map((ingredient) => {
+  const ingredientsButtons = sortedIngredients.map((ingredient) => {
     return <IngredientButton ingredient = {ingredient} key={ingredient.id} handleIngredientSelected={handleIngredientSelected}/>
   })
-
+  
   const selectedIngredients = ingredients.filter((ingredient) => ingredient.selected === true)
 
-  const filteredRecipes = recipes.filter((recipe)=> recipe.ingredients.length <= selectedIngredients.length )
+  const sortedRecipes = recipes.sort((a, b) => a.name.localeCompare(b.name))
+  
+  const filteredRecipes = sortedRecipes.filter((recipe)=> recipe.ingredients.length <= selectedIngredients.length )
 
   const foundRecipes = filteredRecipes.map((recipe) => {
     return <RecipeResult  recipes={recipes} recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
