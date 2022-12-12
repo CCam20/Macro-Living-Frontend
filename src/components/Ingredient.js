@@ -3,7 +3,7 @@ import React from "react";
 const Ingredient = ({ingredient}) => {
 
     return(
-    <div> {ingredient.name}  Quantity: {ingredient.quantity}</div>
+    <div> {ingredient.name}  : {ingredient.quantity}</div>
     )
 }
 

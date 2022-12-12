@@ -24,7 +24,42 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
       const favouriteSelectedText = recipe[0].favourite ? <img width='20px' src={hearted}/>  : <img width='20px' src={unhearted}/>
       const mealPlanSelectedText = recipe[0].mealPlan ? "Remove From Meal Plan" : "Add To Meal Plan"
 
+      const totalProtein = () => {
+        let total = 0
+      for (let i = 0; i < recipe[0].ingredients.length; i++){
+            total += recipe[0].ingredients[i].protein
+        } return Math.round(total)
+    }
+    
+    const totalCarbs = () => {
+        let total = 0
+      for (let i = 0; i < recipe[0].ingredients.length; i++){
+            total += recipe[0].ingredients[i].carbs
+        } return Math.round(total)
+    }
+
+    const totalFat = () => {
+        let total = 0
+      for (let i = 0; i < recipe[0].ingredients.length; i++){
+            total += recipe[0].ingredients[i].fat
+        } return Math.round(total)
+    }
+
+    const totalFibre = () => {
+        let total = 0
+      for (let i = 0; i < recipe[0].ingredients.length; i++){
+            total += recipe[0].ingredients[i].fibre
+        } return Math.round(total)
+    }
+
+    const totalCalories = () => {
+        let total = 0
+      for (let i = 0; i < recipe[0].ingredients.length; i++){
+            total += recipe[0].ingredients[i].calories
+        } return Math.round(total)
+      }
   return (
+    
     <div>
         <div className=''>
           
@@ -36,9 +71,24 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
           {ingredientList}
           <br></br>
           <button className='add-to-meal-btn' type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
-          <br></br>
-          <br></br>
-          Steps:<br></br>
+    <ul>
+         <li>
+            Protein:{totalProtein()}
+        </li>
+        <li>
+            Carbs:{totalCarbs()}
+        </li>
+        <li>
+            Fat:{totalFat()}
+        </li>
+        <li>
+            Fibre:{totalFibre()}
+        </li>
+        <li>
+            Total Calories:{totalCalories()}
+        </li>
+    </ul>
+         <h4>Steps:</h4>
           {recipe[0].steps.step1}<br></br>
           {recipe[0].steps.step2}<br></br>
           {recipe[0].steps.step3}<br></br>
@@ -49,11 +99,8 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
           {recipe[0].steps.step8}<br></br>
           {recipe[0].steps.step9}<br></br>
           {recipe[0].steps.step10}<br></br>
-        
-
-      </div><br></br>
+    </div>
     </div>
   )
 }
-
 export default Recipe
