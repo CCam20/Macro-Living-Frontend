@@ -48,6 +48,7 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     return <RecipeResult  recipes={recipes} recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
   })
 
+  
 
 
 
@@ -57,11 +58,11 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     <div>{user}</div>
     <br></br>
     <hr></hr>
-    <h3>Please select your ingredients</h3>
+    <u><h2>Please select your ingredients</h2></u>
     <div>{ingredientsButtons}</div>
     <br></br>
     <hr></hr>
-    <h3>Based on your selections you have the ingredients to make the following recipes:</h3>
+    <u><h2>Based on your selections you have the ingredients to make the following recipes:</h2></u>
 
     <div>{foundRecipes}</div>
 
@@ -70,14 +71,3 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
 }
 
 export default Homepage
-
-
-
-{/* <div>{ingredientsButtons.sort(function(a, b){
-  var nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
-  if (nameA < nameB) //sort string ascending
-   return -1;
-  if (nameA > nameB)
-   return 1;
-  return 0; //default return value (no sorting)
- })};</div> */}

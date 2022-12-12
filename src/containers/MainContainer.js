@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import Header from '../components/Header'
 import RecipesAll from '../components/RecipesAll'
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import HamburgerMenu from '../components/HamburgerMenu'
 import Homepage from '../components/Homepage'
 import RecipeService, { getRecipes, updateRecipe } from '../components/RecipeService'
 import Recipe from '../components/Recipe'
-import RecipeList from '../components/RecipeList'
 import { addUser, getUsers } from '../components/UserService'
 import { getIngredients} from '../components/IngredientsService'
 import MealPlan from '../components/MealPlan'
+
 
 
 
@@ -102,21 +101,26 @@ const updateUser = ((formData) => {
 
     
     return (
+      <>
     <main>
         <Router>
         <div className="sidebars">
         <HamburgerMenu />
-        {userMealPlan}
-        {/* <MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} users = {users} /> */}
+        {userMealPlan} 
         </div>
+             <br></br>
+             <br></br>
+             <br></br>
+             <br></br>
                 <Routes>
                     <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
                     <Route exact path="/recipe/:id" element={<Recipe recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
-
                 </Routes>
         </Router>
     </main>
+ 
+      </>
   )
 }
 

@@ -1,7 +1,6 @@
 body{
   background-color: #ffe6e6;
-  font-family: san;
-
+  font-family:sans-serif
 }
 /* The side navigation menu */
 .leftsidenav {
@@ -11,11 +10,12 @@ body{
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #111; /* Black*/
+  background-color:black;/* Black*/
+  opacity: 0.9;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  color: #bcbcbc;
+  color: white;
 }
 
 /* The navigation menu links */
@@ -62,13 +62,14 @@ body{
   top: 0; /* Stay at the top */
   right: 0;
   background-color: #111; /* Black*/
-
+  opacity: 0.9;
   overflow-x: scroll; 
   /*Disable horizontal scroll*/
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  color: #bcbcbc;
-  padding-left: 20px;
+  color: white;
+  text-indent: 20px;
+  /* padding-left: 20px; */
 }
 
 .rightsidenav a {
@@ -94,71 +95,3 @@ body{
   margin-left: 50px;
 }
 
-.meal-plan-btn {
-	box-shadow:inset 0px 1px 0px 0px #a4e271;
-	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
-	background-color:#89c403;
-	border-radius:6px;
-	border:1px solid #74b807;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #528009;
-}
-.meal-plan-btn:hover {
-	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
-	background-color:#77a809;
-}
-.meal-plan-btn:active {
-	position:relative;
-	top:1px;
-}
-.add-to-meal-btn {
-	box-shadow:inset 0px 1px 0px 0px #a4e271;
-	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
-	background-color:#89c403;
-	border-radius:6px;
-	border:1px solid #74b807;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #528009;
-}
-.add-to-meal-btn:hover {
-	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
-	background-color:#77a809;
-}
-.add-to-meal-btn:active {
-	position:relative;
-	top:1px;
-}
-
-.hamburger-menu-btn {
-	background-color:transparent;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:0px 0px;
-	text-decoration:none;
-  border-style: none;
-}
-.hamburger-menu-btn:hover {
-	background-color:transparent;
-}
-.hamburger-menu-btn:active {
-	position:relative;
-	top:1px;
-}
