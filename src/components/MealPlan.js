@@ -20,7 +20,7 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
     
       function closeNav() {
         document.getElementById("meal-plan").style.width = "0";
-        document.body.style.backgroundColor = "#ffe6e6";
+
       }
       
       

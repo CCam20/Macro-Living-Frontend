@@ -97,7 +97,7 @@ const updateUser = ((formData) => {
   })
 
 
-  
+  const logo = require('../images/MacroLivingLogoWhite.png')
 
     
     return (
@@ -106,10 +106,9 @@ const updateUser = ((formData) => {
         <Router>
         <div className="sidebars">
         <HamburgerMenu />
+        <img height='100px' src={logo}/>
         {userMealPlan} 
         </div>
-             <br></br>
-             <br></br>
              <br></br>
              <br></br>
                 <Routes>

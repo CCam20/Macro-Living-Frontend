@@ -169,10 +169,10 @@ div.scroll {
 	background-color: transparent;
 	/* text-shadow:0px 1px 0px #528009; */
 }
-.meal-plan-btn:hover {
+/* .meal-plan-btn:hover {
 	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
 	background-color:#77a809;
-}
+} */
 .meal-plan-btn:active {
 	position:relative;
 	top:1px;
