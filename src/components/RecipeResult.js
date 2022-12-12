@@ -78,8 +78,8 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
     
     return (
         <>
-        <div ref={bottomRef}/>
         <div className='recipe-card'>
+        <div ref={bottomRef}/>
     <span className="closed" id={recipe.name}>
     <header onClick={handleToggle} id="toggle">
         <div className="header" style={{backgroundImage: "url(https://www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg)"}}></div>
