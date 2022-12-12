@@ -76,7 +76,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
         <>
             <div className="closed" id="container">
             <header onClick={handleToggle} id="toggle">
-    <div className="header" style={{ backgroundImage: `url(${"www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg"})`}}></div>
+    <div className="header" style={{backgroundImage: "url(https://www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg)"}}></div>
     <div className="title">{recipe.name}</div>
   </header>
   <article>
