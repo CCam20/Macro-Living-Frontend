@@ -7,7 +7,7 @@ import Homepage from '../components/Homepage'
 import RecipeService, { getRecipes, updateRecipe } from '../components/RecipeService'
 import Recipe from '../components/Recipe'
 import RecipeList from '../components/RecipeList'
-import { getUsers } from '../components/UserService'
+import { addUser, getUsers } from '../components/UserService'
 import { getIngredients} from '../components/IngredientsService'
 import MealPlan from '../components/MealPlan'
 
@@ -61,17 +61,18 @@ const handleAddToMealPlan = ((id) => {
             updateRecipe(filteredRecipe)
             setRecipes(updatedRecipes)
     }else{
-        const updatedRecipes = recipes.map((recipe) => {
-            return recipe.id == id
+      const updatedRecipes = recipes.map((recipe) => {
+        return recipe.id == id
         
         ?{...recipe, mealPlan: false} : recipe})
         
         const filteredRecipe = updatedRecipes.find((recipe)=>{return recipe.id==id})
+      
             updateRecipe(filteredRecipe)
             setRecipes(updatedRecipes)
-            alert("Maximum 3 meals allowed in meal plan. Please remove recipes to add a new one")
-        }
-  })
+            alert("Maximum 3 meals allowed in meal plan. Please remove recipes to add a new one")}
+      }
+  )
 
 
 
@@ -86,10 +87,14 @@ const updateUser = ((formData) => {
     updatedUser[0].fibre = formData.fibre
     updatedUser[0].calories = formData.calories
     setUsers(updatedUser)
-  })
 
+    const filteredUser = updatedUser.find((user)=>{return user.id==1})
+    addUser(filteredUser)
+
+  })
+  
   const userMealPlan = users.map((user) => {
-    return  <MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} user = {user} />
+    return  <MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} user = {user} key={user.id} />
   })
 
     

@@ -10,12 +10,12 @@ export const getRecipes = () => {
 export const updateRecipe = (payload) => {
     console.log(payload)
     const id = payload.id;
-    console.log(id)
+
 
     return fetch(baseURL + id, {
         method: "PATCH",
-        headers:{'Content-Type': 'application/json'},
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        headers:{'Content-Type': 'application/json'}
 
     })
 }

@@ -8,13 +8,12 @@ export const getUsers = () => {
         .then(res => res.json())
 }
 
-export const updateUser = (payload) => {
+export const addUser = (payload) => {
     console.log(payload)
     const id = payload.id;
 
     return fetch(baseURL + id, {
-        // mode: "no-cors",
-        method: 'PUT',
+        method: 'PATCH',
         body: JSON.stringify(payload),
         headers:{'Content-Type': 'application/json'}
 
