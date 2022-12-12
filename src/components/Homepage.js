@@ -20,16 +20,33 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
   const selectedIngredients = ingredients.filter((ingredient) => ingredient.selected === true)
 
   const sortedRecipes = recipes.sort((a, b) => a.name.localeCompare(b.name))
+
+
+  const generateFilteredList = (recipes, selectedIngredients) => {    
+    let filteredList = []
+    for(let i=0; i < recipes.length; i++){
+      let counter = 0
+      for(let j=0; j < recipes[i].ingredients.length; j++){
+        for(let k=0; k < selectedIngredients.length; k++){
+          if(recipes[i].ingredients[j].name == selectedIngredients[k].name){
+            counter +=1
+          }
+        }
+      }
+      if(counter >= recipes[i].ingredients.length){
+        filteredList.push(recipes[i])
+      }
+    }
+    return filteredList;
+  }
   
-  const filteredRecipes = sortedRecipes.filter((recipe)=> recipe.ingredients.length <= selectedIngredients.length )
+  const filteredRecipes = generateFilteredList(sortedRecipes, selectedIngredients)
 
   const foundRecipes = filteredRecipes.map((recipe) => {
     return <RecipeResult  recipes={recipes} recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
   })
 
-  // const sortedIngredientsList = ingredientsButtons.sort((a, b) => a.name.localeCompare(b.name))
 
-  /* Set the width of the side navigation to 250px */
 
 
   return (

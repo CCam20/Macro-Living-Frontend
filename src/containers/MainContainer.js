@@ -88,7 +88,9 @@ const updateUser = ((formData) => {
     setUsers(updatedUser)
   })
 
-
+  const userMealPlan = users.map((user) => {
+    return  <MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} user = {user} />
+  })
 
     
     return (
@@ -96,7 +98,8 @@ const updateUser = ((formData) => {
         <Router>
         <div className="sidebars">
         <HamburgerMenu />
-        <MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} />
+        {userMealPlan}
+        {/* <MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} users = {users} /> */}
         </div>
                 <Routes>
                     <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
