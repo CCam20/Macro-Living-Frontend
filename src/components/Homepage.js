@@ -5,6 +5,8 @@ import RecipeResult from './RecipeResult'
 import Ingredient from './Ingredient'
 import IngredientButton from './IngredientButton'
 import MealPlan from './MealPlan'
+import './RecipeResult.css'
+
 
 const Homepage = ({users, recipes, ingredients, handleIngredientSelected, updateUser, handleRecipeFavourite, handleAddToMealPlan}) => {
 
@@ -60,7 +62,9 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     <br></br>
     <hr></hr>
     <h3>Based on your selections you have the ingredients to make the following recipes:</h3>
+
     <div>{foundRecipes}</div>
+
     </>
   )
 }

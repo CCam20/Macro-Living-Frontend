@@ -3,24 +3,27 @@
     transition: all 0.5 ease;
   }
   
+ .recipe-card{
+    display: block
 
+ }
   
-  recipe {
-    width: 100%;
+  span {
+    width: 33%;
     max-width: 400px;
     background: white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    /* position: absolute;
+    /* position:absolute */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
   }
   
-  recipe.closed header { cursor: pointer; }
+  span.closed header { cursor: pointer; }
   header { cursor: pointer; }
   
   .header {
-    width: 100%;
+    width: 33%;
     height: 250px;
     background: center / cover;
     /* background-image: url(https://3.bp.blogspot.com/-v7vHC8w2AKs/TbbD-X8BhTI/AAAAAAAAAJ4/LCcrwIaMgf0/s1600/Mint+Julep+glass+tools.jpg); */
@@ -35,7 +38,7 @@
     margin-top: 0px;
   }
   
-  recipe.closed .title {
+  span.closed .title {
     padding: 40px 20px 10px 20px;
     margin-top: -87px;
     color: white;
@@ -45,7 +48,7 @@
   .title:before {
     z-index: -1;
     content: "";
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
     height: 100%;
@@ -54,7 +57,7 @@
     opacity: 0;
   }
   
-  recipe.closed .title:before {
+  span.closed .title:before {
     opacity: 1;
   }
   
@@ -64,7 +67,7 @@
     max-height: 500px;
   } 
   
-  recipe.closed article {
+  span.closed article {
     max-height: 0px;
     padding: 0 30px;
   }

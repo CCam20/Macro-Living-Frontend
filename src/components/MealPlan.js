@@ -104,7 +104,7 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
     </ul>
     </div>
     </div>
-    <button onClick={openNav}>open</button>
+    <button className='meal-plan-btn' onClick={openNav}>Open Meal Plan</button>
     
     </>
   )

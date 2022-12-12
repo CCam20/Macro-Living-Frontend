@@ -26,7 +26,7 @@ const HamburgerMenu = () => {
     <Link to="/">Home</Link>
     <Link to="/recipes-all">All Recipes</Link>
     </div>
-    <button onClick={openNav}>open</button>
+    <button className="hamburger-menu-btn" onClick={openNav}>Hamburger Menu</button>
 
     </>
 

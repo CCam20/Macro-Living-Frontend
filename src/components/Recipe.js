@@ -27,8 +27,8 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
     <div>
         <div>
           {recipe[0].name}<br></br>
-          <button type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
-          <button type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button><br></br>
+          <button className='fav-btn' type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
+          <button className='add-to-meal-btn' type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button><br></br>
         
           Ingredients:<br></br>
           {ingredientList}

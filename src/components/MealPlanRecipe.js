@@ -68,8 +68,8 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
             Total Calories:{totalCalories()}
         </li>
     </ul>
-    <button type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
-    <button type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
+    <button className="add-to-meal-btn"type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
+    <button className="fav-btn"type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
 
     <br></br>
     </>

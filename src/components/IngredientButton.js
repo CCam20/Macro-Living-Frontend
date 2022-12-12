@@ -12,10 +12,7 @@ const IngredientButton = ({ingredient, handleIngredientSelected}) => {
   }
 
   return (
-    <span>
     <button className={isActive ? "ingredient-button-selected" : "ingredient-button"} type="submit" onClick={handleClick}>{ingredient.name}</button>
-
-    </span>
   )
 }
 

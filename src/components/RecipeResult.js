@@ -73,35 +73,35 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
 
     return (
         <>
-        <recipe className="closed" id={recipe.name}>
-            <header onClick={handleToggle} id="toggle">
-    <div className="header" style={{backgroundImage: "url(https://www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg)"}}></div>
-    <div className="title">{recipe.name}</div>
-  </header>
-  <article>
+    <span className="closed" id={recipe.name}>
+    <header onClick={handleToggle} id="toggle">
+        <div className="header" style={{backgroundImage: "url(https://www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg)"}}></div>
+        <div className="title">{recipe.name}</div>
+    </header>
+    <article>
     <ul className="ingredients">
         {ingredientsList}
     </ul>
     <ul>
-            <li>
-                Protein:{totalProtein()}
-            </li>
-            <li>
-                Carbs:{totalCarbs()}
-            </li>
-            <li>
-                Fat:{totalFat()}
-            </li>
-            <li>
-                Fibre:{totalFibre()}
-            </li>
-            <li>
-                Total Calories:{totalCalories()}
-            </li>
-        </ul>
+         <li>
+            Protein:{totalProtein()}
+        </li>
+        <li>
+            Carbs:{totalCarbs()}
+        </li>
+        <li>
+            Fat:{totalFat()}
+        </li>
+        <li>
+            Fibre:{totalFibre()}
+        </li>
+        <li>
+            Total Calories:{totalCalories()}
+        </li>
+    </ul>
         <hr></hr>
-        <button type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
-        <button type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
+        <button className='add-to-meal-btn' type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
+        <button className='fav-btn' type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
         <br></br>
 
         <hr></hr>
@@ -119,7 +119,8 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
           {recipe.steps.step10}<br></br>
     </div>
   </article>
-</recipe>
+</span>
+
 
         </>
       )
