@@ -1,6 +1,5 @@
 import React from 'react'
-import RecipeResult from './RecipeResult'
-import User from './User'
+import MealPlanRecipe from './MealPlanRecipe'
 
 const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan }) => {
 
@@ -11,7 +10,7 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
     console.log(mealPlanRecipes)
 
     const renderMealPlanRecipes = mealPlanRecipes.map((recipe) => {
-      return <RecipeResult recipe={recipe} key={recipe.if} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
+      return <MealPlanRecipe recipe={recipe} key={recipe.if} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
     })
 
     function openNav() {

@@ -97,6 +97,9 @@ const updateUser = ((formData) => {
     return  <MealPlan recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} user = {user} key={user.id} />
   })
 
+
+  
+
     
     return (
     <main>

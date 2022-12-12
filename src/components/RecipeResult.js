@@ -1,5 +1,8 @@
 import React from 'react'
 import Ingredient from './Ingredient'
+import './RecipeResult.css'
+import IngredientForCard from './IngredientForCard'
+
 
 const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
 
@@ -49,11 +52,38 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
         } return Math.round(total)
     }
 
+    function byID(id) {
+        return document.getElementById(id);
+      }
+      const handleToggle = () => {
+        console.log("clicked")
+    
+        if (byID("container").classList.contains("closed")) {
+          byID("container").classList.remove("closed");
+        } else {
+          byID("container").classList.add("closed");
+        
+      }
+    }
+
+    const ingredientsList = recipe.ingredients.map((ingredient) => {
+      return <IngredientForCard ingredient={ingredient} key={ingredient.id}/>
+    })
+    
+
+
     return (
         <>
-        <br></br>
-        <div><h4>{recipe.name}</h4></div>
-        <ul>
+            <div className="closed" id="container">
+            <header onClick={handleToggle} id="toggle">
+    <div className="header" style={{ backgroundImage: `url(${"www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg"})`}}></div>
+    <div className="title">{recipe.name}</div>
+  </header>
+  <article>
+    <ul className="ingredients">
+        {ingredientsList}
+    </ul>
+    <ul>
             <li>
                 Protein:{totalProtein()}
             </li>
@@ -70,10 +100,28 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
                 Total Calories:{totalCalories()}
             </li>
         </ul>
+        <hr></hr>
         <button type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
         <button type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
-
         <br></br>
+
+        <hr></hr>
+        <div className="preperation"> 
+         Steps:<br></br>
+          {recipe.steps.step1}<br></br>
+          {recipe.steps.step2}<br></br>
+          {recipe.steps.step3}<br></br>
+          {recipe.steps.step4}<br></br>
+          {recipe.steps.step5}<br></br>
+          {recipe.steps.step6}<br></br>
+          {recipe.steps.step7}<br></br>
+          {recipe.steps.step8}<br></br>
+          {recipe.steps.step9}<br></br>
+          {recipe.steps.step10}<br></br>
+    </div>
+  </article>
+</div>
+
         </>
       )
 }

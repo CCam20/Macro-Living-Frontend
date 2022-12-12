@@ -20,7 +20,7 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
       })
 
       const favouriteSelectedText = recipe[0].favourite ? "Hearted" : "Not Hearted"
-      const mealPlanSelectedText = recipe.mealPlan ? "Remove From Meal Plan" : "Add To Meal Plan"
+      const mealPlanSelectedText = recipe[0].mealPlan ? "Remove From Meal Plan" : "Add To Meal Plan"
 
 
   return (
@@ -28,7 +28,7 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
         <div>
           {recipe[0].name}<br></br>
           <button type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
-          <button type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
+          <button type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button><br></br>
         
           Ingredients:<br></br>
           {ingredientList}
@@ -44,13 +44,6 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
           {recipe[0].steps.step9}<br></br>
           {recipe[0].steps.step10}<br></br>
         
-
-
-
-
-
-      {/* loop for ingredients */}
-      {/* loop through steps */}
 
       </div><br></br>
     </div>
