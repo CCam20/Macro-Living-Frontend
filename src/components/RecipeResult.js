@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useRef, useState} from 'react'
 import Ingredient from './Ingredient'
 import './RecipeResult.css'
 import IngredientForCard from './IngredientForCard'
 
 
 const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
-
-   
+    
+    const [visibleDetails, setVisibleDetails] = useState(false);
+    
       const handleClick = (() => {
         handleRecipeFavourite(recipe.id)
       })
@@ -59,20 +60,26 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
     
         if (byID(recipe.name).classList.contains("closed")) {
           byID(recipe.name).classList.remove("closed");
+          setVisibleDetails(!visibleDetails)
+          bottomRef.current?.scrollIntoView({behavior: 'smooth',});
         } else {
           byID(recipe.name).classList.add("closed");
-        
+
       }
     }
 
     const ingredientsList = recipe.ingredients.map((ingredient) => {
       return <IngredientForCard ingredient={ingredient} key={ingredient.id}/>
     })
+    const bottomRef = useRef(null);
     
-
-
+    
+    
+    
     return (
         <>
+        <div ref={bottomRef}/>
+        <div className='recipe-card'>
     <span className="closed" id={recipe.name}>
     <header onClick={handleToggle} id="toggle">
         <div className="header" style={{backgroundImage: "url(https://www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg)"}}></div>
@@ -120,6 +127,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
     </div>
   </article>
 </span>
+</div>
 
 
         </>

@@ -45,7 +45,7 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
   const filteredRecipes = generateFilteredList(sortedRecipes, selectedIngredients)
 
   const foundRecipes = filteredRecipes.map((recipe) => {
-    return <RecipeResult  recipes={recipes} recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
+    return <RecipeResult className="result-container" recipes={recipes} recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
   })
 
   
