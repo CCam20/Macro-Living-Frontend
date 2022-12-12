@@ -56,12 +56,11 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
         return document.getElementById(id);
       }
       const handleToggle = () => {
-        console.log("clicked")
     
-        if (byID("container").classList.contains("closed")) {
-          byID("container").classList.remove("closed");
+        if (byID(recipe.name).classList.contains("closed")) {
+          byID(recipe.name).classList.remove("closed");
         } else {
-          byID("container").classList.add("closed");
+          byID(recipe.name).classList.add("closed");
         
       }
     }
@@ -74,7 +73,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
 
     return (
         <>
-            <div className="closed" id="container">
+        <recipe className="closed" id={recipe.name}>
             <header onClick={handleToggle} id="toggle">
     <div className="header" style={{backgroundImage: "url(https://www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg)"}}></div>
     <div className="title">{recipe.name}</div>
@@ -107,7 +106,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
 
         <hr></hr>
         <div className="preperation"> 
-         Steps:<br></br>
+         <h4>Steps:</h4>
           {recipe.steps.step1}<br></br>
           {recipe.steps.step2}<br></br>
           {recipe.steps.step3}<br></br>
@@ -120,7 +119,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
           {recipe.steps.step10}<br></br>
     </div>
   </article>
-</div>
+</recipe>
 
         </>
       )
