@@ -8,7 +8,7 @@ export const getRecipes = () => {
 }
 
 export const updateRecipe = (payload) => {
-    console.log(payload)
+
     const id = payload.id;
 
 

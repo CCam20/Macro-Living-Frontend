@@ -9,7 +9,7 @@ export const getUsers = () => {
 }
 
 export const addUser = (payload) => {
-    console.log(payload)
+
     const id = payload.id;
 
     return fetch(baseURL + id, {

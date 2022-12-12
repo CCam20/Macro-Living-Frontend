@@ -8,7 +8,7 @@ export const getIngredients = () => {
         .then(res => res.json())
 }
 export const updateIngredients = (payload) => {
-    console.log(payload)
+
     const id = payload.id;
 
     return fetch(baseURL + id, {

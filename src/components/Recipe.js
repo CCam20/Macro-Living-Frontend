@@ -19,7 +19,10 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
         handleAddToMealPlan(recipe[0].id)
       })
 
-      const favouriteSelectedText = recipe[0].favourite ? "Hearted" : "Not Hearted"
+      const hearted = require("../images/Hearted.png")
+      const unhearted= require("../images/Unhearted.png")
+
+      const favouriteSelectedText = recipe[0].favourite ? <img width='20px' src={hearted}/>  : <img width='20px' src={unhearted}/>
       const mealPlanSelectedText = recipe[0].mealPlan ? "Remove From Meal Plan" : "Add To Meal Plan"
 
 

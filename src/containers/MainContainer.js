@@ -40,7 +40,7 @@ const handleRecipeFavourite = ((id) => {
     return recipe.id == id
     ?{...recipe, favourite: !recipe.favourite} : recipe
   })
-  console.log(updatedRecipes)
+
   const filteredRecipe = updatedRecipes.find((recipe)=>{return recipe.id==id})
   updateRecipe(filteredRecipe)
   setRecipes(updatedRecipes)

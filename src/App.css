@@ -18,6 +18,21 @@ input{
   padding-left: 15px;
 
 }
+a:link {
+	text-decoration: none;
+  }
+  
+  a:visited {
+	text-decoration: none;
+  }
+  
+  a:hover {
+	text-decoration: none;
+  }
+  
+  a:active {
+	text-decoration: none;
+  }
 
 
 .macros-button {
@@ -215,6 +230,16 @@ div.scroll {
 	gap: 25px 30px;
 	justify-content: center;
 }
+.recipe-list-all {
+	display: flex;
+
+	/* flex-direction: row; */
+	flex-wrap: wrap;
+	/* width: 400px; */
+	/* text-align: center; */
+	gap: 25px 30px;
+	justify-content: center;
+}
 
 .recipe-card{
 	width: 400px;
@@ -226,4 +251,14 @@ div.scroll {
 	/* padding-top: 10px; */
 	scroll-behavior: smooth;
 	/* overflow-y: scroll; */
+  }
+
+  .recipe-card-all{
+	width: 400px;
+	list-style-type: none;
+  }
+  .fav-btn{
+	background: none;
+	border: none;
+	
   }

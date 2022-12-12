@@ -1,10 +1,7 @@
 import React from 'react'
-import HamburgerMenu from './HamburgerMenu'
 import User from './User'
 import RecipeResult from './RecipeResult'
-import Ingredient from './Ingredient'
 import IngredientButton from './IngredientButton'
-import MealPlan from './MealPlan'
 import './RecipeResult.css'
 
 
@@ -22,7 +19,6 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
   const selectedIngredients = ingredients.filter((ingredient) => ingredient.selected === true)
 
   const sortedRecipes = recipes.sort((a, b) => a.name.localeCompare(b.name))
-
 
   const generateFilteredList = (recipes, selectedIngredients) => {    
     let filteredList = []
@@ -48,13 +44,8 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     return <RecipeResult className="result-container" recipes={recipes} recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
   })
 
-  
-
-
-
   return (
     <>
-
     <div>{user}</div>
     <br></br>
     <hr></hr>
@@ -63,9 +54,7 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     <br></br>
     <hr></hr>
     <u><h2>Based on your selections you have the ingredients to make the following recipes:</h2></u>
-
     <div className='recipe-list'>{foundRecipes}</div>
-
     </>
   )
 }

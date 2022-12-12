@@ -7,7 +7,7 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
       return recipe.mealPlan == true
     })
     
-    console.log(mealPlanRecipes)
+
 
     const renderMealPlanRecipes = mealPlanRecipes.map((recipe) => {
       return <MealPlanRecipe recipe={recipe} key={recipe.if} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>
@@ -74,12 +74,12 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
         } return Math.round(totalCalories)
       }
       
-      console.log(user.fat);
+
 
 
   return (
     <>
-    <div id="meal-plan" className="rightsidenav">
+    <div onClick={closeNav} id="meal-plan" className="rightsidenav">
     <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
     <h1>Meal Plan</h1>
     {renderMealPlanRecipes}
