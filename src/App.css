@@ -60,6 +60,11 @@ a:link {
 	top:1px;
 }
 
+.sidebars{
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+}
 .ingredient-button{
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
@@ -99,7 +104,6 @@ a:link {
 	font-weight:bold;
 	padding:6px 10px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
 }
 .ingredient-button-selected:hover {
 	background:linear-gradient(to bottom, #464646 5%, #000000 100%);
@@ -135,11 +139,6 @@ a:link {
 	top:1px;
 }
 
-.sidebars{
-  display: flex;
-  justify-content: space-between;
-  /* margin-right: 25px; */
-}
 
 div.scroll { 
   margin:4px, 4px; 
@@ -152,27 +151,11 @@ div.scroll {
   text-align:justify; 
 }
 .meal-plan-btn {
-	/* box-shadow:inset 0px 1px 0px 0px #a4e271;
-	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
-	background-color:#89c403;
-	border-radius:6px;
-	border:1px solid #74b807;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px; */
 	text-decoration:none;
 	border-style: none;
 	background-color: transparent;
-	/* text-shadow:0px 1px 0px #528009; */
 }
-/* .meal-plan-btn:hover {
-	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
-	background-color:#77a809;
-} */
+
 .meal-plan-btn:active {
 	position:relative;
 	top:1px;
@@ -205,16 +188,10 @@ div.scroll {
 
 .hamburger-menu-btn {
 	background-color:transparent;
-	/* display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:0px 0px; */
 	text-decoration:none;
   	border-style: none;
 }
+
 .hamburger-menu-btn:hover {
 	background-color:transparent;
 }
@@ -222,45 +199,34 @@ div.scroll {
 	position:relative;
 	top:1px;
 }
+.fav-btn{
+	background: none;
+	border: none;
+}
+
+/* Recipe card css */
 .recipe-list {
 	display: flex;
-
-	/* flex-direction: row; */
 	flex-wrap: wrap;
-	/* width: 400px; */
-	/* text-align: center; */
 	gap: 25px 30px;
 	justify-content: center;
 }
 .recipe-list-all {
 	display: flex;
-
-	/* flex-direction: row; */
 	flex-wrap: wrap;
-	/* width: 400px; */
-	/* text-align: center; */
 	gap: 25px 30px;
 	justify-content: center;
 }
 
 .recipe-card{
 	width: 400px;
-	/* position: relative; */
-	background-color: white;
-	/* border: 5px solid black; */
-	/* border-radius: 10px; */
-	/* padding: 5px; */
-	/* padding-top: 10px; */
+	/* position:absolute; */
+	background-color: salmon;  /*Open card background*/
 	scroll-behavior: smooth;
-	/* overflow-y: scroll; */
-  }
+}
 
-  .recipe-card-all{
+.recipe-card-all{
 	width: 400px;
 	list-style-type: none;
   }
-  .fav-btn{
-	background: none;
-	border: none;
-	
-  }
+

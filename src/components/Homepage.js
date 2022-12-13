@@ -5,7 +5,7 @@ import IngredientButton from './IngredientButton'
 import './RecipeResult.css'
 
 
-const Homepage = ({users, recipes, ingredients, handleIngredientSelected, updateUser, handleRecipeFavourite, handleAddToMealPlan}) => {
+const Homepage = ({users, recipes, ingredients, handleIngredientSelected, updateUser, handleRecipeFavourite, handleAddToMealPlan, handleClearAll}) => {
 
   const user = users.map((user) => {
     return <User user = {user} key={user.id} updateUser = {updateUser}/>
@@ -50,7 +50,9 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     <br></br>
     <hr></hr>
     <u><h2>Please select your ingredients</h2></u>
-    <div>{ingredientsButtons}</div>
+
+    <div>{ingredientsButtons} <button onClick={handleClearAll}type="submit">Clear All</button></div> 
+    
     <br></br>
     <hr></hr>
     <u><h2>Based on your selections you have the ingredients to make the following recipes:</h2></u>

@@ -32,8 +32,15 @@ const handleIngredientSelected = ((id) => {
       ?{...ingredient, selected: !ingredient.selected} : ingredient
   })
   setIngredients(updatedIngredients);
-
 })
+
+// const handleClearAll = (() => {
+//   let updatedIngredients = []
+//   for(let i=0; i < recipes.length; i++){
+//     updatedIngredients = ingredients[i].selected = false
+//   }setIngredients(updatedIngredients)
+// })
+
 
 const handleRecipeFavourite = ((id) => {
   const updatedRecipes = recipes.map((recipe) => {
@@ -69,8 +76,8 @@ const handleAddToMealPlan = ((id) => {
       
             updateRecipe(filteredRecipe)
             setRecipes(updatedRecipes)
-            alert("Maximum 3 meals allowed in meal plan. Please remove recipes to add a new one")}
-      }
+            }
+          }
   )
 
 const updateUser = ((formData) => {
