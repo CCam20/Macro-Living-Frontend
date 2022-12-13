@@ -1,69 +1,36 @@
 
 form{
-  margin: 5;
-  
+  margin: 5; 
 }
-
 
 label{
   margin: 5;
   padding: 10px;
-
 }
-
+body{
+	background-color: rgb(241, 161, 5) ;
+}
 input{
   width: 20%;
   max-width: 100px;
   height: 30px;
   font-size: 1rem;
   padding-left: 15px;
-
 }
+
 a:link {
 	text-decoration: none;
-  }
-  
+}  
   a:visited {
 	text-decoration: none;
-  }
-  
+} 
   a:hover {
 	text-decoration: none;
-  }
-  
+}
   a:active {
 	text-decoration: none;
-  }
+}
 
-
-.macros-button {
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-	background-color:#ffffff;
-	border-radius:1px;
-	border:2px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#2e2e2e;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	padding:6px 48px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-	margin-left: 30px;
-}
-.macros-button:hover {
-	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-	background-color:#f6f6f6;
-}
-.macros-button:active {
-	position:relative;
-	top:1px;
-}
-main{
-	/* background-color: #FDD037; */
-}
 .sidebars{
   display: flex;
   justify-content: space-between;
@@ -73,98 +40,17 @@ main{
   padding-left: 10px;
   padding-right: 10px;
 }
-.user-form{
-	background-color: #FDD037;
-	padding-top: 0.1px;
-	padding-bottom: 15px;
-}
 
 .hamburger-logo{
-	/* padding-left: 100px; */
 	margin-left: 75px;
 	width: 100px
 }
 .ingredients-box{
 	background-color: rgb(241, 161, 5);
-	padding-top: 10px;
+	padding-top: 5px;
 	padding-bottom: 10px
-;
 }
-.ingredient-button{
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-	background-color:#ffffff;
-	border-radius:1px;
-	border:2px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#2e2e2e;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	padding:6px 10px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-}
-.ingredient-button:hover {
-	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-	background-color:#f6f6f6;
-}
-.ingredient-button:active {
-	position:relative;
-	top:1px;
-}
-
-.ingredient-button-selected {
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #000000 5%, #464646 100%);
-	background-color:#000000;
-	border-radius:1px;
-	border:2px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#f1f1f1;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	padding:6px 10px;
-	text-decoration:none;
-}
-.ingredient-button-selected:hover {
-	background:linear-gradient(to bottom, #464646 5%, #000000 100%);
-	background-color:#f6f6f6;
-}
-.ingredient-button-selected:active {
-	position:relative;
-	top:1px;
-}
-
-.ingredient-button{
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-	background-color:#ffffff;
-	border-radius:1px;
-	border:2px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#2e2e2e;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	padding:6px 10px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-}
-.ingredient-button:hover {
-	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-	background-color:#f6f6f6;
-}
-.ingredient-button:active {
-	position:relative;
-	top:1px;
-}
-
-
+/* No idea what this is for, not deleted just in case */
 div.scroll { 
   margin:4px, 4px; 
   padding:4px; 
@@ -180,7 +66,6 @@ div.scroll {
 	border-style: none;
 	background-color: transparent;
 }
-
 .meal-plan-btn:active {
 	position:relative;
 	top:1px;
@@ -210,13 +95,11 @@ div.scroll {
 	position:relative;
 	top:1px;
 }
-
 .hamburger-menu-btn {
 	background-color:transparent;
 	text-decoration:none;
   	border-style: none;
 }
-
 .hamburger-menu-btn:hover {
 	background-color:transparent;
 }
@@ -228,7 +111,6 @@ div.scroll {
 	background: none;
 	border: none;
 }
-
 /* Recipe card css */
 .recipe-list {
 	display: flex;
@@ -241,33 +123,43 @@ div.scroll {
 	flex-wrap: wrap;
 	gap: 25px 30px;
 	justify-content: center;
-}
+	background-color: rgb(241, 161, 5);
+	/* padding-bottom: 550px; */
 
+}
+.recipe-list-fav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px 30px;
+	justify-content: center;
+	padding-top: 20px;
+	background-color: rgb(241, 161, 5);
+	/* padding-bottom: 400px; */
+	
+
+}
 .recipe-card{
 	width: 400px;
 	/* position:absolute; */
 	background-color: #b6e8f0;  /*Open card background*/
 	scroll-behavior: smooth;
 }
-
 .recipe-card-all{
 	width: 400px;
 	list-style-type: none;
-  }
+}
 .steps{
 	list-style-type: none;
 }
-
 .main-content{
 	text-align: center;
-	color:white;
-    text-shadow: 3px 3px black;
-	font-style: italic;
+	color:black;
+    text-shadow: 2px 2px white ;
 }
 .footer{
 	background-color:#25332c;
 	color: wheat;
-	padding: 25px;
+	padding: 5px;
 	/* padding-bottom: 75px; */
 	position: fixed;
 	left: 0;
@@ -277,8 +169,8 @@ div.scroll {
 }
 .selection-box{
 	background-color: #b6e8f0;
-	padding: 10px;
-	margin-bottom: 10px;
+	padding: 2px;
+	margin-bottom: 5px;
 	
 }
 .macro-red{
@@ -288,3 +180,8 @@ div.scroll {
 .macro-green{
 	color:green
 }
+.filter-by-recipe-btn{
+	background-color: rgb(241, 161, 5) ;
+	padding: 20px;
+}
+

@@ -73,12 +73,35 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
 
       const proteinText = user.protein - calculateTotalProtein() < 0 ? "true": "false"
       
+      const proteinWithinLimits = () => {
+        if((user.protein - calculateTotalCalories()) <= 0){
+          return false
+        }
+          return true 
+      }
+      const carbsWithinLimits = () => {
+        if((user.carbs - calculateTotalCalories()) <= 0){
+          return false
+        }
+          return true 
+      }
+      const fatWithinLimits = () => {
+        if((user.fat - calculateTotalCalories()) <= 0){
+          return false
+        }
+          return true 
+      }
+      const fibreWithinLimits = () => {
+        if((user.fibre - calculateTotalCalories()) <= 0){
+          return false
+        }
+          return true 
+      }
       const caloriesWithinLimits = () => {
         if((user.calories - calculateTotalCalories()) <= 0){
           return false
         }
-          return true
-        
+          return true 
       }
       
 
@@ -92,16 +115,16 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
     <div>
      <p>Your Remaining Macros</p>
     <ul>
-        <li>
+        <li className={proteinWithinLimits() ? "macro-green" : "macro-red"}>
         Protein: {user.protein - calculateTotalProtein()}
         </li>
-        <li>
+        <li className={carbsWithinLimits() ? "macro-green" : "macro-red"}>
         Carbs: {user.carbs - calculateTotalCarbs()}
         </li>
-        <li>
+        <li className={fatWithinLimits() ? "macro-green" : "macro-red"}>
         Fat: {user.fat - calculateTotalFat()}
         </li>
-        <li>
+        <li className={fibreWithinLimits() ? "macro-green" : "macro-red"}>
         Fibre: {user.fibre - calculateTotalFibre()}
         </li>
         <li className={caloriesWithinLimits() ? "macro-green" : "macro-red"}>

@@ -21,8 +21,11 @@ const FavouritesPage = ({recipes, handleRecipeFavourite}) => {
   
   
     return (
-    <div className='recipe-list-all'>
+        <div className='fav-page'>
+    <div className='recipe-list-fav'>
+        <br></br>
     {favouriteRecipes}
+    </div>
     </div>
   )
 }

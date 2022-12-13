@@ -36,12 +36,24 @@ const handleIngredientSelected = ((id) => {
   setIngredients(updatedIngredients);
 })
 
-// const handleClearAll = (() => {
+const handleClearAll = (() => {
+  let updatedIngredients = ingredients.map((ingredient) => {
+    for(let i=0; i < ingredients.length; i++){
+      if(ingredient[i].selected == true){
+        ingredient[i].selected = false
+      }}
+    })
+      setIngredients(updatedIngredients)
+    })
+    
+// const handleClearAll = () => {
 //   let updatedIngredients = []
-//   for(let i=0; i < recipes.length; i++){
-//     updatedIngredients = ingredients[i].selected = false
-//   }setIngredients(updatedIngredients)
-// })
+//   for(let i=0; i < ingredients.length; i++){
+//       ingredients.selected = false
+//       updatedIngredients.push(ingredients)
+//     } setIngredients(updatedIngredients)
+//   }
+
 
 
 const handleRecipeFavourite = ((id) => {
@@ -113,18 +125,18 @@ const updateUser = ((formData) => {
         <img height='100px' src={logo}/>
         {userMealPlan} 
         </div>
-             <br></br>
+             {/* <br></br> */}
                 <Routes>
-                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
+                    <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} handleClearAll={handleClearAll}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
                     <Route exact path="/recipe/:id" element={<Recipe recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
                     <Route exact path="/recipes-fav" element={<FavouritesPage recipes={recipes} handleRecipeFavourite = {handleRecipeFavourite}/>}/>
                 </Routes>
         </Router>
     </main>
+    {/* <br></br>
     <br></br>
-    <br></br>
-    <br></br>
+    <br></br> */}
 
     <footer><Footer className="footer"/></footer>
  

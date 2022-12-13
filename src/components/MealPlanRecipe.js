@@ -53,7 +53,7 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
   return (
     <>
         <br></br>
-    <div><h4>{recipe.name}</h4></div>
+    <div><h4>{recipe.name} <button className="fav-btn"type="submit" onClick={handleClick}>{favouriteSelectedText}</button></h4></div>
     <ul>
         <li>
             Protein:{totalProtein()}
@@ -73,7 +73,6 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
     </ul>
     
     <button className="add-to-meal-btn"type='submit' onClick={handleMealPlanClick}>{mealPlanSelectedText}</button>
-    <button className="fav-btn"type="submit" onClick={handleClick}>{favouriteSelectedText}</button>
 
     <br></br>
     </>

@@ -15,10 +15,6 @@ const RecipesAll = ({recipes}) => {
     
   })
   
-  // useEffect = (() =>{
-  //   setSelectedRecipeList(recipeList)
-  // })
-  
   const generateVeganList = (recipes) => {    
     let filteredList = []
     for(let i=0; i < recipes.length; i++){
@@ -79,14 +75,14 @@ const RecipesAll = ({recipes}) => {
 
   return (
     <>
-        <div>
+        <div className='filter-by-recipe-btn'>
         <p>Filter recipes by:</p>
         <input type="radio" value="all" name="radio"  onClick={handleAllClick} /> All
         <input type="radio" value="vegetarian" name="radio" onClick={handleVegetarianClick}/> Vegetarian
         <input type="radio" value="vegan" name="radio" onClick={handleVeganClick} /> Vegan
         </div>
-      <br></br>
     <div className='recipe-list-all'>
+      {/* <br></br> */}
         {selectedRecipeList}
     </div>
     </>
