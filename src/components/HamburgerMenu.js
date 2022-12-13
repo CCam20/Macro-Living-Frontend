@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 
 const HamburgerMenu = () => {
+  const logo = require('../images/MacroLivingLogoBlack.png')
+
 
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -18,6 +20,9 @@ const HamburgerMenu = () => {
     <>
     <div onClick={closeNav} id="mySidenav" className="leftsidenav">
     <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+    <img className='hamburger-logo'  src={logo}/>
+    <br></br>
+    <br></br>
     <Link to="/">Home</Link>
     <Link to="/recipes-all">All Recipes</Link>
     </div>

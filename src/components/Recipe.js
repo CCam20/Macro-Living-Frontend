@@ -58,6 +58,7 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
             total += recipe[0].ingredients[i].calories
         } return Math.round(total)
       }
+      
   return (
     
     <div>
@@ -89,16 +90,13 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
         </li>
     </ul>
          <h4>Steps:</h4>
-          {recipe[0].steps.step1}<br></br>
-          {recipe[0].steps.step2}<br></br>
-          {recipe[0].steps.step3}<br></br>
-          {recipe[0].steps.step4}<br></br>
-          {recipe[0].steps.step5}<br></br>
-          {recipe[0].steps.step6}<br></br>
-          {recipe[0].steps.step7}<br></br>
-          {recipe[0].steps.step8}<br></br>
-          {recipe[0].steps.step9}<br></br>
-          {recipe[0].steps.step10}<br></br>
+          <ul>
+          <li className='steps'>{recipe[0].steps.step1}</li>
+          <li className='steps'>{recipe[0].steps.step2}</li>
+          <li className='steps'>{recipe[0].steps.step3}</li>
+          <li className='steps'>{recipe[0].steps.step4}</li>
+          <li className='steps'>{recipe[0].steps.step5}</li>
+          </ul>
     </div>
     </div>
   )

@@ -11,50 +11,14 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
       const handleClick = (() => {
         handleRecipeFavourite(recipe.id)
       })
-    //   const handleMealPlanClick =(() => {
-    //     handleAddToMealPlan(recipe.id)
-    //   })
+
 
       const hearted = require("../images/Hearted.png")
       const unhearted= require("../images/Unhearted.png")
 
       const favouriteSelectedText = recipe.favourite ? <img width='20px' src={hearted}/>  : <img width='20px' src={unhearted}/>
-    //   const mealPlanSelectedText = recipe.mealPlan ? "Remove from Meal Plan" : "Add To Meal Plan"
 
-    // const totalProtein = () => {
-    //     let total = 0
-    //     for (let i = 0; i < recipe.ingredients.length; i++){
-    //          total += recipe.ingredients[i].protein
-    //     } return Math.round(total)
-    // }
-    
-    // const totalCarbs = () => {
-    //     let total = 0
-    //     for (let i = 0; i < recipe.ingredients.length; i++){
-    //          total += recipe.ingredients[i].carbs
-    //     } return Math.round(total)
-    // }
 
-    // const totalFat = () => {
-    //     let total = 0
-    //     for (let i = 0; i < recipe.ingredients.length; i++){
-    //          total += recipe.ingredients[i].fat
-    //     } return Math.round(total)
-    // }
-
-    // const totalFibre = () => {
-    //     let total = 0
-    //     for (let i = 0; i < recipe.ingredients.length; i++){
-    //          total += recipe.ingredients[i].fibre
-    //     } return Math.round(total)
-    // }
-
-    // const totalCalories = () => {
-    //     let total = 0
-    //     for (let i = 0; i < recipe.ingredients.length; i++){
-    //          total += recipe.ingredients[i].calories
-    //     } return Math.round(total)
-    // }
 
     function byID(id) {
         return document.getElementById(id);
@@ -71,9 +35,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
       }
     }
 
-    // const ingredientsList = recipe.ingredients.map((ingredient) => {
-    //   return <IngredientForCard ingredient={ingredient} key={ingredient.id}/>
-    // })
+
     const bottomRef = useRef(null);
     
     return (
@@ -82,7 +44,7 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
         <div className='recipe-card'>
         <div ref={bottomRef}/>
     <header onClick={handleToggle} id="toggle">
-        <div className="header" style={{backgroundImage: "url(https://www.recipegirl.com/wp-content/uploads/2007/11/Apple-Bacon-Salad-Recipe.jpg)"}}></div>
+        <img className="header" src={recipe.imgUrl}/>
     </header>
         <div className="title">{recipe.name}<button className='fav-btn' type="submit" onClick={handleClick}>{favouriteSelectedText}</button></div> 
     <CardContents recipe={recipe} handleRecipeFavourite={handleAddToMealPlan} handleAddToMealPlan={handleAddToMealPlan} />

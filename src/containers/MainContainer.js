@@ -112,7 +112,6 @@ const updateUser = ((formData) => {
         {userMealPlan} 
         </div>
              <br></br>
-             <br></br>
                 <Routes>
                     <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>

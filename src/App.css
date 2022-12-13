@@ -59,12 +59,28 @@ a:link {
 	position:relative;
 	top:1px;
 }
-
+main{
+	/* background-color: #FDD037; */
+}
 .sidebars{
   display: flex;
   justify-content: space-between;
-  background-color: #000000;
+  background-color: #0295A9;
+  padding-bottom: 10px;
+  padding-top: 2px;
 }
+.user-form{
+	background-color: #FDD037;
+	padding-top: 0.1px;
+	padding-bottom: 15px;
+}
+
+.hamburger-logo{
+	/* padding-left: 100px; */
+	margin-left: 75px;
+	width: 100px
+}
+
 .ingredient-button{
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
@@ -229,4 +245,6 @@ div.scroll {
 	width: 400px;
 	list-style-type: none;
   }
-
+.steps{
+	list-style-type: none;
+}

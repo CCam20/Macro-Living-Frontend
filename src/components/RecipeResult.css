@@ -33,7 +33,9 @@ header { cursor: pointer; }
 span.closed .title {
     padding: 40px 20px 10px 20px;
     margin-top: -125px;
-    color: oldlace;
+    color:white;
+    /* -webkit-text-stroke: 1px black; */
+    text-shadow: 2px 2px black;
     border: none;
 
 
