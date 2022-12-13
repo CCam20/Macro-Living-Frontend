@@ -12,7 +12,7 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
     })
     function openNav() {
         document.getElementById("meal-plan").style.width = "350px";
-        // document.body.style.backgroundColor = "rgba(100,90,90,0.99)";
+
       }
     
       function closeNav() {
@@ -71,13 +71,23 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
       
       const mealPlanLogo = require("../images/LogoBowl.png")
 
-
+      const proteinText = user.protein - calculateTotalProtein() < 0 ? "true": "false"
+      
+      const caloriesWithinLimits = () => {
+        if((user.calories - calculateTotalCalories()) <= 0){
+          return false
+        }
+          return true
+        
+      }
+      
 
   return (
     <>
     <div id="meal-plan" className="rightsidenav">
     <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
     <h1>Meal Plan</h1>
+    <h3>Add up to 3 meals for the day</h3>
     {renderMealPlanRecipes}
     <div>
      <p>Your Remaining Macros</p>
@@ -94,7 +104,7 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
         <li>
         Fibre: {user.fibre - calculateTotalFibre()}
         </li>
-        <li>
+        <li className={caloriesWithinLimits() ? "macro-green" : "macro-red"}>
         Calories: {user.calories - calculateTotalCalories()}
         </li>
     </ul>

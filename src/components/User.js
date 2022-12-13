@@ -19,7 +19,7 @@ const User = ({updateUser}) => {
 
   return (
     <div className='user-form'>
-    <u><h2>Input Macros in grams</h2></u>
+    <h2>Input Macros in grams</h2>
       <form onSubmit = {handleUserSubmit}>
       <label htmlFor="protein">Protein:</label>
       <input type="number" id="protein" name="protein" min="0" placeholder='Protein' value={formData.protein} onChange={(e) => setFormData({...formData , protein: e.target.value})} required autoFocus/>

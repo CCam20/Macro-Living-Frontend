@@ -51,6 +51,7 @@ a:link {
 	padding:6px 48px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
+	margin-left: 30px;
 }
 .macros-button:hover {
 	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
@@ -259,6 +260,9 @@ div.scroll {
 
 .main-content{
 	text-align: center;
+	color:white;
+    text-shadow: 3px 3px black;
+	font-style: italic;
 }
 .footer{
 	background-color:#25332c;
@@ -275,4 +279,12 @@ div.scroll {
 	background-color: #b6e8f0;
 	padding: 10px;
 	margin-bottom: 10px;
+	
+}
+.macro-red{
+	color: red;
+}
+
+.macro-green{
+	color:green
 }
