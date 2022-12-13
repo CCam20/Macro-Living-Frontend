@@ -8,6 +8,7 @@ import Recipe from '../components/Recipe'
 import { addUser, getUsers } from '../components/UserService'
 import { getIngredients} from '../components/IngredientsService'
 import MealPlan from '../components/MealPlan'
+import Footer from '../components/Footer'
 
 
 
@@ -119,6 +120,11 @@ const updateUser = ((formData) => {
                 </Routes>
         </Router>
     </main>
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <Footer className="footer"/>
  
       </>
   )
