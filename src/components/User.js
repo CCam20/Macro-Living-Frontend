@@ -14,6 +14,7 @@ const User = ({updateUser}) => {
     const handleUserSubmit = ((e) => {
       e.preventDefault()
       updateUser(formData)
+      alert("Thank you for inputting your macros ")
     })
 
   return (

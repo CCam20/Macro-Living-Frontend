@@ -46,15 +46,19 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
 
   return (
     <>
+    <div className='main-content'>
     <div>{user}</div>
     <br></br>
 
     <div className='ingredients-box'>
     <u><h2>Please select your ingredients</h2></u>
-    <div>{ingredientsButtons} <button onClick={handleClearAll}type="submit">Clear All</button></div> 
+    <div>{ingredientsButtons} </div> 
     </div>
     <br></br>
+    <div className='selection-box'>
     <u><h2>Based on your selections you have the ingredients to make the following recipes:</h2></u>
+    </div>
+    </div>
     <div className='recipe-list'>{foundRecipes}</div>
     </>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import RecipeList from './RecipeList'
 import './RecipeResult.css'
 
@@ -7,14 +7,17 @@ const RecipesAll = ({recipes}) => {
 
   const [selectedRecipeList, setSelectedRecipeList] = useState([])
 
-
-
+  
   const sortedRecipes = recipes.sort((a, b) => a.name.localeCompare(b.name))
   
   const recipeList = sortedRecipes.map((recipe) => {
-    return <RecipeList recipe = {recipe} key={recipe.id}/>
+    return <RecipeList recipe = {recipe} key={recipe.id}/> 
+    
   })
   
+  // useEffect = (() =>{
+  //   setSelectedRecipeList(recipeList)
+  // })
   
   const generateVeganList = (recipes) => {    
     let filteredList = []

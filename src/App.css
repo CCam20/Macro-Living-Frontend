@@ -4,6 +4,7 @@ form{
   
 }
 
+
 label{
   margin: 5;
   padding: 10px;
@@ -255,14 +256,23 @@ div.scroll {
 .steps{
 	list-style-type: none;
 }
+
+.main-content{
+	text-align: center;
+}
 .footer{
 	background-color:#25332c;
 	color: wheat;
-	padding: 50px;
-	padding-bottom: 75px;
+	padding: 25px;
+	/* padding-bottom: 75px; */
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	text-align: center;
+}
+.selection-box{
+	background-color: #b6e8f0;
+	padding: 10px;
+	margin-bottom: 10px;
 }
