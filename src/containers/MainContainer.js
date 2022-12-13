@@ -9,6 +9,7 @@ import { addUser, getUsers } from '../components/UserService'
 import { getIngredients} from '../components/IngredientsService'
 import MealPlan from '../components/MealPlan'
 import Footer from '../components/Footer'
+import FavouritesPage from '../components/FavouritesPage'
 
 
 
@@ -117,6 +118,7 @@ const updateUser = ((formData) => {
                     <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
                     <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
                     <Route exact path="/recipe/:id" element={<Recipe recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
+                    <Route exact path="/recipes-fav" element={<FavouritesPage recipes={recipes} handleRecipeFavourite = {handleRecipeFavourite}/>}/>
                 </Routes>
         </Router>
     </main>
@@ -124,7 +126,7 @@ const updateUser = ((formData) => {
     <br></br>
     <br></br>
 
-    <Footer className="footer"/>
+    <footer><Footer className="footer"/></footer>
  
       </>
   )

@@ -78,7 +78,7 @@ const RecipesAll = ({recipes}) => {
     <>
         <div>
         <p>Filter recipes by:</p>
-        <input type="radio" value="all" name="radio"  onClick={handleAllClick}/> All
+        <input type="radio" value="all" name="radio"  onClick={handleAllClick} /> All
         <input type="radio" value="vegetarian" name="radio" onClick={handleVegetarianClick}/> Vegetarian
         <input type="radio" value="vegan" name="radio" onClick={handleVeganClick} /> Vegan
         </div>

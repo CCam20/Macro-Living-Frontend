@@ -25,6 +25,7 @@ const HamburgerMenu = () => {
     <br></br>
     <Link to="/">Home</Link>
     <Link to="/recipes-all">All Recipes</Link>
+    <Link to="/recipes-fav">Favourites</Link>
     </div>
     <button className="hamburger-menu-btn" onClick={openNav}><img src={hamburgerMenuIcon} width='50px' alt="Hamburger Menu"/></button>
     </>

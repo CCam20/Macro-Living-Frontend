@@ -83,7 +83,7 @@ main{
 	width: 100px
 }
 .ingredients-box{
-	background-color: #FDD037;
+	background-color: rgb(241, 161, 5);
 	padding-top: 10px;
 	padding-bottom: 10px
 ;
@@ -244,7 +244,7 @@ div.scroll {
 .recipe-card{
 	width: 400px;
 	/* position:absolute; */
-	background-color: salmon;  /*Open card background*/
+	background-color: #b6e8f0;  /*Open card background*/
 	scroll-behavior: smooth;
 }
 
@@ -254,4 +254,15 @@ div.scroll {
   }
 .steps{
 	list-style-type: none;
+}
+.footer{
+	background-color:#25332c;
+	color: wheat;
+	padding: 50px;
+	padding-bottom: 75px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
 }
