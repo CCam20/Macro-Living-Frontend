@@ -9,6 +9,7 @@ label{
 }
 body{
 	background-color: rgb(241, 161, 5) ;
+	padding-bottom: 100px;
 }
 input{
   width: 20%;
@@ -124,7 +125,7 @@ div.scroll {
 	gap: 25px 30px;
 	justify-content: center;
 	background-color: rgb(241, 161, 5);
-	/* padding-bottom: 550px; */
+	padding-bottom: 50px;
 
 }
 .recipe-list-fav {
@@ -134,7 +135,7 @@ div.scroll {
 	justify-content: center;
 	padding-top: 20px;
 	background-color: rgb(241, 161, 5);
-	/* padding-bottom: 400px; */
+	padding-bottom: 50px;
 	
 
 }
