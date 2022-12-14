@@ -86,7 +86,6 @@ const RecipesAll = ({recipes, handleRecipeFavourite}) => {
         <input type="radio" value="vegan" name="radio" onClick={handleVeganClick} /> Vegan
         </div>
     <div className='recipe-list-all'>
-      {/* <br></br> */}
         {selectedRecipeList}
     </div>
     </>

@@ -3,13 +3,14 @@ import { useState } from 'react';
 import IngredientForCard from './IngredientForCard';
 
 const CardContents = ({recipe, handleRecipeFavourite, handleAddToMealPlan}) => {
+
     const [visibleDetails, setVisibleDetails] = useState(false);
     
     const handleClick = (() => {
       handleRecipeFavourite(recipe.id)
     })
     const handleMealPlanClick =(() => {
-      handleAddToMealPlan(recipe.id)
+      handleAddToMealPlan(recipe.id) 
     })
 
     const hearted = require("../images/Hearted.png")
