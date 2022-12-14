@@ -8,7 +8,7 @@ label{
   padding: 10px;
 }
 body{
-	background-color: rgb(241, 161, 5) ;
+	/* background-color: rgb(241, 161, 5) ; */
 	padding-bottom: 100px;
 }
 input{
@@ -62,6 +62,7 @@ div.scroll {
   overflow-x: auto; 
   text-align:justify; 
 }
+
 .meal-plan-btn {
 	text-decoration:none;
 	border-style: none;
@@ -155,7 +156,7 @@ div.scroll {
 .main-content{
 	text-align: center;
 	color:black;
-    text-shadow: 2px 2px white ;
+    /* text-shadow: 1px 1px white ; */
 }
 .footer{
 	background-color:#25332c;
@@ -169,7 +170,7 @@ div.scroll {
 	text-align: center;
 }
 .selection-box{
-	background-color: #b6e8f0;
+	background-color: #0295A9;
 	padding: 2px;
 	margin-bottom: 5px;
 	
@@ -185,4 +186,9 @@ div.scroll {
 	background-color: rgb(241, 161, 5) ;
 	padding: 20px;
 }
+
+
+
+
+/* ////////// */
 

@@ -52,7 +52,8 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
 
     <div className='ingredients-box'>
     <h2>Please select your ingredients</h2>
-    <div>{ingredientsButtons} <button onClick={handleClearAll} >Clear All</button></div> 
+    <div>{ingredientsButtons}
+    <button  className='clear-btn' onClick={handleClearAll} >Clear All</button></div> 
     </div>
     {/* <br></br> */}
     <div className='selection-box'>

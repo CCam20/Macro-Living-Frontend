@@ -38,7 +38,14 @@ const User = ({updateUser}) => {
       <input type="number" id="calories" name="calories" min="0" placeholder='Calories'value={formData.calories} onChange={(e) => setFormData({...formData , calories: e.target.value})} required/>
     
       <button className='macros-button' type="submit">Update Macros</button>
-      </form>
+      
+      
+      
+
+    
+    
+    
+    </form>
     </div>
   )
 }

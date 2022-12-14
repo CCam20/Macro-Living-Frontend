@@ -21,12 +21,16 @@ const MainContainer = () => {
   const [users, setUsers] = useState([]);
 
   const [ingredients, setIngredients] = useState([]);
+  
+  const [clearSelectedIngredients, setClearSelectedIngredients] = useState([])
 
   useEffect(() => {
     getRecipes().then((allRecipes) => {setRecipes(allRecipes)});
     getUsers().then((allUsers) => {setUsers(allUsers)});
     getIngredients().then((allIngredients) => {setIngredients(allIngredients)});
-},[],[],[])
+    getIngredients().then((allIngredients) => {setClearSelectedIngredients(allIngredients)});
+
+},[],[],[],[])
 
 const handleIngredientSelected = ((id) => {
   const updatedIngredients = ingredients.map((ingredient) => {
@@ -37,25 +41,10 @@ const handleIngredientSelected = ((id) => {
 })
 
 const handleClearAll = (() => {
-  let updatedIngredients = ingredients.map((ingredient) => {
-    for(let i=0; i < ingredients.length; i++){
-      if(ingredient[i].selected == true){
-        ingredient[i].selected = false
-      }}
-    })
-      setIngredients(updatedIngredients)
-    })
-    
-// const handleClearAll = () => {
-//   let updatedIngredients = []
-//   for(let i=0; i < ingredients.length; i++){
-//       ingredients.selected = false
-//       updatedIngredients.push(ingredients)
-//     } setIngredients(updatedIngredients)
-//   }
+  setIngredients(clearSelectedIngredients)
+})
 
-
-
+  
 const handleRecipeFavourite = ((id) => {
   const updatedRecipes = recipes.map((recipe) => {
     return recipe.id == id
