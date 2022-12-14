@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
 
@@ -53,7 +55,7 @@ const MealPlanRecipe = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => 
   return (
     <>
         <br></br>
-    <div><h4>{recipe.name} <button className="fav-btn"type="submit" onClick={handleClick}>{favouriteSelectedText}</button></h4></div>
+    <div><h4><Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link><button className="fav-btn"type="submit" onClick={handleClick}>{favouriteSelectedText}</button></h4></div>
     <ul>
         <li>
             Protein:{totalProtein()}

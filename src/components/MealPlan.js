@@ -71,7 +71,7 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
       
       const mealPlanLogo = require("../images/LogoBowl.png")
 
-      // const proteinText = user.protein - calculateTotalProtein() < 0 ? "true": "false"
+
       
       const proteinWithinLimits = () => {
         if((user.protein - calculateTotalProtein()) <= 0){

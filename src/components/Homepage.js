@@ -20,6 +20,7 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
 
   const sortedRecipes = recipes.sort((a, b) => a.name.localeCompare(b.name))
 
+  
   const generateFilteredList = (recipes, selectedIngredients) => {    
     let filteredList = []
     for(let i=0; i < recipes.length; i++){
@@ -28,16 +29,13 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
         for(let k=0; k < selectedIngredients.length; k++){
           if(recipes[i].ingredients[j].name == selectedIngredients[k].name){
             counter +=1
-          }
-        }
-      }
+          }}}
       if(counter >= recipes[i].ingredients.length){
-        filteredList.push(recipes[i])
-      }
-    }
+        filteredList.push(recipes[i]
+          )}}
     return filteredList;
   }
-  
+
   const filteredRecipes = generateFilteredList(sortedRecipes, selectedIngredients)
 
   const foundRecipes = filteredRecipes.map((recipe) => {
@@ -48,14 +46,14 @@ const Homepage = ({users, recipes, ingredients, handleIngredientSelected, update
     <>
     <div className='main-content'>
     <div>{user}</div>
-    {/* <br></br> */}
+
 
     <div className='ingredients-box'>
     <h2>Please select your ingredients</h2>
     <div>{ingredientsButtons}
     <button  className='clear-btn' onClick={handleClearAll} >Clear All</button></div> 
     </div>
-    {/* <br></br> */}
+
     <div className='selection-box'>
     <h2>Based on your selections you have the ingredients to make the following recipes:</h2>
     </div>
