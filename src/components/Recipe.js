@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Ingredient from './Ingredient'
 import './Recipe.css'
 
@@ -12,12 +12,16 @@ const Recipe = ({recipes, handleRecipeFavourite, handleAddToMealPlan}) => {
         return <Ingredient ingredient = {ingredient} key={ingredient.id}/>
       })
 
+    const navigate = useNavigate()
+
       const handleClick = (() => {
         handleRecipeFavourite(recipe.id)
       })
       const handleMealPlanClick =(() => {
         handleAddToMealPlan(recipe.id)
+        navigate("/recipes-all")
       })
+
 
       const hearted = require("../images/Hearted.png")
       const unhearted= require("../images/Unhearted.png")

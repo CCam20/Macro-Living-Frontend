@@ -14,6 +14,10 @@ const RecipesAll = ({recipes, handleRecipeFavourite}) => {
     return <RecipeList recipe = {recipe} key={recipe.id}/> 
     
   })
+
+  useEffect(() => {
+    setSelectedRecipeList(recipeList)
+  },[])
   
   const generateVeganList = (recipes) => {    
     let filteredList = []
@@ -77,7 +81,7 @@ const RecipesAll = ({recipes, handleRecipeFavourite}) => {
     <>
         <div className='filter-by-recipe-btn'>
         <p>Filter recipes by:</p>
-        <input type="radio" value="all" name="radio"  onClick={handleAllClick} /> All
+        <input type="radio" value="all" name="radio" defaultChecked onClick={handleAllClick} /> All
         <input type="radio" value="vegetarian" name="radio" onClick={handleVegetarianClick}/> Vegetarian
         <input type="radio" value="vegan" name="radio" onClick={handleVeganClick} /> Vegan
         </div>
