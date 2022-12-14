@@ -12,7 +12,7 @@ body{
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color:black;/* Black*/
+  background-color:rgba(17, 17, 17, 0.858);
   opacity: 0.9;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -64,7 +64,7 @@ body{
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   right: 0;
-  background-color: #111; /* Black*/
+  background-color: rgba(17, 17, 17, 0.858); /* Black*/
   opacity: 0.9;
   overflow-x: scroll; 
   /*Disable horizontal scroll*/
