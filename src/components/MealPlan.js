@@ -71,28 +71,28 @@ const MealPlan = ({recipes, user,  handleRecipeFavourite, handleAddToMealPlan })
       
       const mealPlanLogo = require("../images/LogoBowl.png")
 
-      const proteinText = user.protein - calculateTotalProtein() < 0 ? "true": "false"
+      // const proteinText = user.protein - calculateTotalProtein() < 0 ? "true": "false"
       
       const proteinWithinLimits = () => {
-        if((user.protein - calculateTotalCalories()) <= 0){
+        if((user.protein - calculateTotalProtein()) <= 0){
           return false
         }
           return true 
       }
       const carbsWithinLimits = () => {
-        if((user.carbs - calculateTotalCalories()) <= 0){
+        if((user.carbs - calculateTotalCarbs()) <= 0){
           return false
         }
           return true 
       }
       const fatWithinLimits = () => {
-        if((user.fat - calculateTotalCalories()) <= 0){
+        if((user.fat - calculateTotalFat()) <= 0){
           return false
         }
           return true 
       }
       const fibreWithinLimits = () => {
-        if((user.fibre - calculateTotalCalories()) <= 0){
+        if((user.fibre - calculateTotalFibre()) <= 0){
           return false
         }
           return true 

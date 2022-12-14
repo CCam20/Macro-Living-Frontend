@@ -3,7 +3,7 @@ import RecipeList from './RecipeList'
 import './RecipeResult.css'
 
 
-const RecipesAll = ({recipes}) => {
+const RecipesAll = ({recipes, handleRecipeFavourite}) => {
 
   const [selectedRecipeList, setSelectedRecipeList] = useState([])
 
@@ -51,7 +51,7 @@ const RecipesAll = ({recipes}) => {
   const veganRecipes = generateVeganList(sortedRecipes)
 
   const veganList = veganRecipes.map((recipe) => {
-    return <RecipeList recipe = {recipe} key={recipe.id}/>
+    return <RecipeList recipe = {recipe} key={recipe.id} handleRecipeFavourite={handleRecipeFavourite}/>
   })
   
   const vegetarianRecipes = generateVegetarianList(sortedRecipes)

@@ -57,31 +57,59 @@ const CardContents = ({recipe, handleRecipeFavourite, handleAddToMealPlan}) => {
       return document.getElementById(id);
     }
 
-
   const ingredientsList = recipe.ingredients.map((ingredient) => {
-    return <IngredientForCard ingredient={ingredient} key={ingredient.id}/>
+    return <IngredientForCard ingredient={ingredient} key={ingredient.id}/>   
 })
+
+const isVegan = () => {
+    let counter = 0
+    for(let i=0; i< recipe.ingredients.length; i++){
+      if(recipe.ingredients[i].vegan){
+        counter +=1
+      }
+    }
+    if(counter == recipe.ingredients.length){
+      return "Vegan"
+    } else {
+      return ""
+    }
+  }
+
+  const isVegetarian = () => {
+    let counter = 0
+    for(let i=0; i< recipe.ingredients.length; i++){
+      if(recipe.ingredients[i].vegetarian){
+        counter +=1
+      }
+    }
+    if(counter == recipe.ingredients.length){
+      return "Vegetarian"
+    } else {
+      return ""
+    }
+  }
 
   return (
     <article>
     <ul className="ingredients">
         {ingredientsList}
     </ul>
+    <div className="vegan-veggie">{isVegan()} {isVegetarian()}</div>
     <ul>
          <li>
-            Protein:{totalProtein()}
+            Protein: {totalProtein()}
         </li>
         <li>
-            Carbs:{totalCarbs()}
+            Carbs: {totalCarbs()}
         </li>
         <li>
-            Fat:{totalFat()}
+            Fat: {totalFat()}
         </li>
         <li>
-            Fibre:{totalFibre()}
+            Fibre: {totalFibre()}
         </li>
         <li>
-            Total Calories:{totalCalories()}
+            Total Calories: {totalCalories()}
         </li>
     </ul>
         <hr></hr>
@@ -91,16 +119,14 @@ const CardContents = ({recipe, handleRecipeFavourite, handleAddToMealPlan}) => {
         <hr></hr>
         <div className="preperation"> 
          <h4>Steps:</h4>
-          {recipe.steps.step1}<br></br>
-          {recipe.steps.step2}<br></br>
-          {recipe.steps.step3}<br></br>
-          {recipe.steps.step4}<br></br>
-          {recipe.steps.step5}<br></br>
-          {recipe.steps.step6}<br></br>
-          {recipe.steps.step7}<br></br>
-          {recipe.steps.step8}<br></br>
-          {recipe.steps.step9}<br></br>
-          {recipe.steps.step10}<br></br>
+         <ul>
+            <li className="steps">{recipe.steps.step1}</li>
+            <li className="steps">{recipe.steps.step2}</li>
+            <li className="steps">{recipe.steps.step3}</li>
+            <li className="steps">{recipe.steps.step4}</li>
+            <li className="steps">{recipe.steps.step5}</li>
+        </ul>
+
     </div>
   </article>
   )

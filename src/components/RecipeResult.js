@@ -43,9 +43,9 @@ const RecipeResult = ({recipe, handleRecipeFavourite,handleAddToMealPlan}) => {
     <span className="closed" id={recipe.name}>
         <div className='recipe-card'>
         <div ref={bottomRef}/>
-    <header onClick={handleToggle} id="toggle">
+        <header onClick={handleToggle} id="toggle">
         <img className="header" src={recipe.imgUrl}/>
-    </header>
+        </header>
         <div className="title">{recipe.name}<button className='fav-btn' type="submit" onClick={handleClick}>{favouriteSelectedText}</button></div> 
     <CardContents recipe={recipe} handleRecipeFavourite={handleAddToMealPlan} handleAddToMealPlan={handleAddToMealPlan} />
     </div>

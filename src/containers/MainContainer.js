@@ -21,7 +21,7 @@ const MainContainer = () => {
   const [users, setUsers] = useState([]);
 
   const [ingredients, setIngredients] = useState([]);
-  
+
   const [clearSelectedIngredients, setClearSelectedIngredients] = useState([])
 
   useEffect(() => {
@@ -111,13 +111,13 @@ const updateUser = ((formData) => {
         <Router>
         <div className="sidebars">
         <HamburgerMenu />
-        <img height='100px' src={logo}/>
+        <Link to="/"><img height='100px' src={logo}/></Link>
         {userMealPlan} 
         </div>
              {/* <br></br> */}
                 <Routes>
                     <Route exact path="/" element={<Homepage users={users} ingredients={ingredients} recipes={recipes} handleIngredientSelected={handleIngredientSelected} updateUser = {updateUser} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan} handleClearAll={handleClearAll}/>}/>
-                    <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes}/>}/>
+                    <Route exact path="/recipes-all" element={<RecipesAll recipes = {recipes} handleRecipeFavourite={handleRecipeFavourite}/>}/>
                     <Route exact path="/recipe/:id" element={<Recipe recipes={recipes} handleRecipeFavourite={handleRecipeFavourite} handleAddToMealPlan={handleAddToMealPlan}/>}/>
                     <Route exact path="/recipes-fav" element={<FavouritesPage recipes={recipes} handleRecipeFavourite = {handleRecipeFavourite}/>}/>
                 </Routes>

@@ -3,7 +3,7 @@ import FavouriteRecipe from './FavouriteRecipe'
 
 const FavouritesPage = ({recipes, handleRecipeFavourite}) => {
 
-    const recpieList = () => {
+    const recipeList = () => {
         let favouritesList = []
         for(let i=0; i < recipes.length; i++){
             if(recipes[i].favourite == true){
@@ -12,7 +12,7 @@ const FavouritesPage = ({recipes, handleRecipeFavourite}) => {
         } return favouritesList
     } 
 
-    const filteredList = recpieList()
+    const filteredList = recipeList()
 
     const favouriteRecipes = filteredList.map((recipe) => {
         return <FavouriteRecipe recipe = {recipe} key= {recipe.id} handleRecipeFavourite={handleRecipeFavourite}/>
